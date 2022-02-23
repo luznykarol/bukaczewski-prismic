@@ -18,7 +18,7 @@ export const FadeSection = ({ slice }) => {
         } else {
           setImageIndex(1);
         }
-      }, 2000);
+      }, 4000);
       return () => {
         clearInterval(ref.current);
       };
@@ -26,7 +26,7 @@ export const FadeSection = ({ slice }) => {
   }, [imageIndex]);
 
   return (
-    <section className="FadeSection">
+    <section className="fadeSection">
       <div className="fadeContainer">
         {images.map((item, index) => (
           <div
@@ -40,7 +40,16 @@ export const FadeSection = ({ slice }) => {
               image={item.image?.gatsbyImageData}
               // alt={item.image?.alt}
             />
-            <h2 className="fadeText">{item.title.text}</h2>
+            <div className="container">
+              <h2
+                className={`fadeText fadeText-${
+                  index + 1 === imageIndex
+                    ? "fadeText fadeText--visible"
+                    : "fadeText"
+                }`}>
+                {item.title.text}
+              </h2>
+            </div>
           </div>
         ))}
       </div>

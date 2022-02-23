@@ -3,11 +3,12 @@
 /* Custom, iPhone Retina */
 *,
 html {
-  /* -webkit-font-smoothing: antialiased; */
+  -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
+  box-sizing: border-box;
 }
 ::selection {
   background: #fff7c7; /* WebKit/Blink Browsers */
@@ -42,17 +43,11 @@ footer {
 }
 
 main {
-  padding: 0 16px;
+  // padding: 0 16px;
 }
 
 footer {
   padding: 24px 16px;
-}
-
-main {
-  section {
-    padding-bottom: 8%;
-  }
 }
 
 /* Small Devices, Tablets */
@@ -71,8 +66,8 @@ main {
     padding: 38px 7%;
   }
   main {
-    max-width: 1080px;
-    margin: auto;
+    // max-width: 1080px;
+    // margin: auto;
   }
 }
 
@@ -96,6 +91,11 @@ main {
   width: 100%;
 }
 
+.fadeSection {
+  margin-top: 88px;
+  height: calc(100vh - 88px);
+}
+
 .fadeItem {
   height: 100%;
   display: flex;
@@ -105,6 +105,24 @@ main {
   position: absolute;
   transition: 1.5s opacity ease-in-out;
   opacity: 0;
+
+  &:before {
+    background-image: linear-gradient(
+      180deg,
+      #140e32,
+      hsla(0, 0%, 77%, 0) 59.68%
+    );
+    bottom: 0;
+    content: "";
+    left: 0;
+    mix-blend-mode: multiply;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
 }
 
 .visible {
@@ -120,9 +138,37 @@ main {
 }
 
 .fadeText {
+  font-size: 52px;
+  font-weight: bold;
+  max-width: 580px;
   color: #ffff;
   position: relative;
+  z-index: 2;
+  text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+  opacity: 0;
+
+  transform: translate(0, -50%);
+  z-index: 20;
+
+  transform: translate(0, calc(-50% + 20px));
+  transition: all 1s ease;
   z-index: 3;
+
+  &--visible {
+    opacity: 1;
+    transform: translate(0, -50%);
+    transition: all 1s ease;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .fadeItem-1 {

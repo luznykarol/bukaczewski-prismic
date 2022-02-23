@@ -1,9 +1,9 @@
-import * as React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
+import React, { useRef, useState, useEffect } from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 
-import { TopMenu } from './TopMenu'
-import { Footer } from './Footer'
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 export const Layout = ({ children, topMenu, activeDocMeta }) => {
   const queryData = useStaticQuery(graphql`
@@ -15,8 +15,11 @@ export const Layout = ({ children, topMenu, activeDocMeta }) => {
         }
       }
     }
-  `)
+  `);
 
+  const [height, setHeight] = useState(0);
+
+  console.log(height);
   return (
     <>
       <Helmet>
@@ -37,9 +40,9 @@ export const Layout = ({ children, topMenu, activeDocMeta }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <TopMenu topMenu={topMenu} activeDocMeta={activeDocMeta} />
+      <Header topMenu={topMenu} activeDocMeta={activeDocMeta} />
       <main>{children}</main>
       <Footer />
     </>
-  )
-}
+  );
+};

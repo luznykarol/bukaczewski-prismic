@@ -1,16 +1,36 @@
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1080px;
+#gatsby-focus-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
   margin: auto;
   padding: 24px 16px;
+  // height: 88px;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  background-color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  transition: 0.4s min-height ease;
+  z-index: 10;
 
   @media only screen and (min-width: $min-width-md) {
     flex-direction: row;
     justify-content: space-between;
   }
 
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--active {
+    box-shadow: 0 13px 48px 0 rgb(215 216 222 / 44%);
+  }
   .menu {
     display: flex;
     justify-content: center;
@@ -34,6 +54,10 @@ header {
       list-style: none;
       margin: 0;
       padding: 0;
+
+      li {
+        margin: 0;
+      }
 
       .language-switcher {
         color: grey;
