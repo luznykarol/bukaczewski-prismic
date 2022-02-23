@@ -1,32 +1,32 @@
-import * as React from 'react'
-import { graphql } from 'gatsby'
-import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { SliceZone } from '@prismicio/react'
+import * as React from "react";
+import { graphql } from "gatsby";
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
+import { SliceZone } from "@prismicio/react";
 
-import { Layout } from '../components/Layout'
-import { components } from '../slices'
+import { Layout } from "../components/Layout";
+import { components } from "../slices";
 
 const HomepageTemplate = ({ data }) => {
-  if (!data) return null
+  if (!data) return null;
 
-  const homepage = data.prismicHomepage || {}
-  const topMenu = data.prismicTopMenu || {}
+  const homepage = data.prismicHomepage || {};
+  const topMenu = data.prismicTopMenu || {};
 
-  const { lang, type, url } = homepage || {}
-  const alternateLanguages = homepage.alternate_languages || []
+  const { lang, type, url } = homepage || {};
+  const alternateLanguages = homepage.alternate_languages || [];
   const activeDoc = {
     lang,
     type,
     url,
     alternateLanguages,
-  }
+  };
 
   return (
     <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
       <SliceZone slices={homepage.data.body} components={components} />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query homepageQuery($lang: String) {
@@ -52,6 +52,7 @@ export const query = graphql`
           ...HomepageDataBodyHeadlineWithButton
           ...HomepageDataBodyInfoWithImage
           ...HomepageDataBodyTextInfo
+          ...HomepageDataBodyFadesection
         }
       }
     }
@@ -59,6 +60,6 @@ export const query = graphql`
       ...TopMenuFragment
     }
   }
-`
+`;
 
-export default withPrismicPreview(HomepageTemplate)
+export default withPrismicPreview(HomepageTemplate);

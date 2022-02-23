@@ -11,13 +11,7 @@
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": {
-          "headline_with_button": [],
-          "full_width_image": [],
-          "info_with_image": [],
-          "text_info": [],
-          "email_signup": []
-        },
+        "labels": null,
         "choices": {
           "headline_with_button": {
             "type": "Slice",
@@ -29,14 +23,14 @@
               "headline": {
                 "type": "StructuredText",
                 "config": {
-                  "single": "heading1, heading2",
+                  "single": "heading1,heading2",
                   "label": "headline"
                 }
               },
               "description": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item",
+                  "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
                   "allowTargetBlank": true,
                   "label": "description"
                 }
@@ -116,14 +110,14 @@
               "section_title": {
                 "type": "StructuredText",
                 "config": {
-                  "single": "heading1, heading2",
+                  "single": "heading1,heading2",
                   "label": "section_title"
                 }
               },
               "text": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, heading3, strong, em, hyperlink, list-item, o-list-item",
+                  "multi": "paragraph,heading3,strong,em,hyperlink,list-item,o-list-item",
                   "allowTargetBlank": true,
                   "label": "text"
                 }
@@ -141,14 +135,14 @@
               "section_title": {
                 "type": "StructuredText",
                 "config": {
-                  "single": "heading1, heading2",
+                  "single": "heading1,heading2",
                   "label": "section_title"
                 }
               },
               "left_column_text": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, heading3, strong, em, hyperlink, list-item, o-list-item",
+                  "multi": "paragraph,heading3,strong,em,hyperlink,list-item,o-list-item",
                   "allowTargetBlank": true,
                   "label": "left_column_text"
                 }
@@ -156,7 +150,7 @@
               "right_column_text": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, heading3, strong, em, hyperlink, list-item, o-list-item",
+                  "multi": "paragraph,heading3,strong,em,hyperlink,list-item,o-list-item",
                   "allowTargetBlank": true,
                   "label": "right_column_text"
                 }
@@ -174,14 +168,14 @@
               "section_title": {
                 "type": "StructuredText",
                 "config": {
-                  "single": "heading1, heading2",
+                  "single": "heading1,heading2",
                   "label": "section_title"
                 }
               },
               "description": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item",
+                  "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item",
                   "allowTargetBlank": true,
                   "label": "description"
                 }
@@ -209,6 +203,33 @@
               }
             },
             "repeat": {}
+          },
+          "fadesection": {
+            "type": "Slice",
+            "fieldset": "FadeSection",
+            "description": "fade",
+            "icon": "account_balance",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 1980
+                  },
+                  "thumbnails": [],
+                  "label": "image"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                  "label": "title"
+                }
+              }
+            }
           }
         }
       }

@@ -1,10 +1,11 @@
-import * as React from 'react'
-import { graphql } from 'gatsby'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { PrismicRichText } from '@prismicio/react'
+import * as React from "react";
+import { graphql } from "gatsby";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { PrismicRichText } from "@prismicio/react";
 
 export const InfoWithImage = ({ slice }) => {
-  const featuredImage = slice.primary.featured_image
+  const featuredImage = slice.primary.featured_image;
+
   return (
     <section className="info-with-image">
       <div className="featured-image">
@@ -23,19 +24,18 @@ export const InfoWithImage = ({ slice }) => {
           alt={featuredImage?.alt}
           className="desktop"
         />
-      </div>
-      <div className="text-content">
-        <StaticImage
-          src="../images/top-icon.png"
-          alt="Checkbox icon"
-          placeholder="none"
-        />
-        <PrismicRichText field={slice.primary.section_title.richText} />
-        <PrismicRichText field={slice.primary.text.richText} />
+        <div className="container">
+          <div className="text-content">
+            <PrismicRichText
+              className="text-content"
+              field={slice.primary.section_title.richText}
+            />
+          </div>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export const query = graphql`
   fragment PageDataBodyInfoWithImage on PrismicPageDataBodyInfoWithImage {
@@ -89,4 +89,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

@@ -1,33 +1,33 @@
-import * as React from 'react'
-import { graphql } from 'gatsby'
-import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { SliceZone } from '@prismicio/react'
+import * as React from "react";
+import { graphql } from "gatsby";
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
+import { SliceZone } from "@prismicio/react";
 
-import { Layout } from '../components/Layout'
-import { components } from '../slices'
+import { Layout } from "../components/Layout";
+import { components } from "../slices";
 
 const PageTemplate = ({ data }) => {
-  if (!data) return null
+  if (!data) return null;
 
-  const pageContent = data.prismicPage
-  const page = pageContent.data || {}
+  const pageContent = data.prismicPage;
+  const page = pageContent.data || {};
 
-  const { lang, type, url } = pageContent
-  const alternateLanguages = pageContent.alternate_languages || []
+  const { lang, type, url } = pageContent;
+  const alternateLanguages = pageContent.alternate_languages || [];
   const activeDoc = {
     lang,
     type,
     url,
     alternateLanguages,
-  }
-  const topMenu = data.prismicTopMenu || {}
+  };
+  const topMenu = data.prismicTopMenu || {};
 
   return (
     <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
       <SliceZone slices={page.body} components={components} />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query pageQuery($id: String, $lang: String) {
@@ -63,6 +63,6 @@ export const query = graphql`
       ...TopMenuFragment
     }
   }
-`
+`;
 
-export default withPrismicPreview(PageTemplate)
+export default withPrismicPreview(PageTemplate);

@@ -4,6 +4,7 @@ header {
   align-items: center;
   max-width: 1080px;
   margin: auto;
+  padding: 24px 16px;
 
   @media only screen and (min-width: $min-width-md) {
     flex-direction: row;

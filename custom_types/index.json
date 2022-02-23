@@ -16,5 +16,11 @@
     "name": "Top Menu",
     "repeatable": false,
     "value": "top_menu.json"
+  },
+  {
+    "id": "contact_info",
+    "name": "Contact Info",
+    "repeatable": true,
+    "value": "contact_info.json"
   }
 ]

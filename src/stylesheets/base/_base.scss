@@ -38,8 +38,15 @@ button:focus {
 main,
 header,
 footer {
-  padding: 30px 60px;
   margin: 0 auto;
+}
+
+main {
+  padding: 0 16px;
+}
+
+footer {
+  padding: 24px 16px;
 }
 
 main {
@@ -49,12 +56,12 @@ main {
 }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width: $min-width-l) {
-  header,
-  footer {
-    padding: 38px 80px;
-  }
-}
+// @media only screen and (min-width: $min-width-l) {
+//   header,
+//   footer {
+//     padding: 38px 80px;
+//   }
+// }
 
 /* Medium Devices, Desktops, Large Devices, Wide Screens */
 
@@ -67,4 +74,73 @@ main {
     max-width: 1080px;
     margin: auto;
   }
+}
+
+.container {
+  max-width: 1080px;
+  padding: 0 16px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.flexBetween {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fadeContainer {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.fadeItem {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  transition: 1.5s opacity ease-in-out;
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.fadeImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.fadeText {
+  color: #ffff;
+  position: relative;
+  z-index: 3;
+}
+
+.fadeItem-1 {
+  z-index: 3;
+}
+
+.fadeItem-2 {
+  z-index: 2;
+}
+
+.fadeItem-3 {
+  z-index: 1;
+}
+
+.fadeItem-visible {
+  opacity: 1;
+}
+
+.fadeItem-fade {
+  opacity: 0;
 }

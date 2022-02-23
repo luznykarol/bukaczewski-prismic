@@ -1,11 +1,13 @@
-import * as React from 'react'
-import { Link, graphql } from 'gatsby'
-import { PrismicLink, PrismicText } from '@prismicio/react'
-import { StaticImage } from 'gatsby-plugin-image'
+import * as React from "react";
+import { Link, graphql } from "gatsby";
+import { PrismicLink, PrismicText } from "@prismicio/react";
+import { StaticImage } from "gatsby-plugin-image";
 
-import { LanguageSwitcher } from './LanguageSwitcher'
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const TopMenu = ({ topMenu, activeDocMeta }) => {
+  const currentLang = activeDocMeta.lang;
+
   const renderedMenuLinks = topMenu
     ? topMenu.menu_links.map((menuLink, index) => (
         <li key={`top-nav-${index}`}>
@@ -14,12 +16,14 @@ export const TopMenu = ({ topMenu, activeDocMeta }) => {
           </PrismicLink>
         </li>
       ))
-    : null
+    : null;
+
+  const indexRoute = currentLang === "en-us" ? "/en-us" : "/";
 
   return (
     <header>
       <div className="menu">
-        <Link to="/">
+        <Link to={indexRoute}>
           <StaticImage
             src="../images/logo.png"
             alt="Site logo"
@@ -35,8 +39,8 @@ export const TopMenu = ({ topMenu, activeDocMeta }) => {
         </ul>
       </div>
     </header>
-  )
-}
+  );
+};
 
 export const query = graphql`
   fragment TopMenuFragment on PrismicTopMenu {
@@ -57,4 +61,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
