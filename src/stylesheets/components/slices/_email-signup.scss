@@ -80,3 +80,15 @@
     }
   }
 }
+
+.button {
+  box-sizing: border-box;
+  height: 66px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: black;
+  background-color: transparent;
+  border: 1px solid #2d2d2d;
+  border-radius: 6px;
+}

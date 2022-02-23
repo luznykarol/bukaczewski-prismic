@@ -7,11 +7,12 @@ module.exports = {
   // your repository.
   //
   // Example: 'my-repo' if your Prismic repository URL is 'my-repo.prismic.io'.
-  prismicRepo: 'bukaczewski-prismic',
+  prismicRepo: "bukaczewski-prismic",
 
   // The default language for content in your Prismic repository.
-  defaultLanguage: 'en-us',
+  defaultLanguage: "pl",
 
   // All available languages for content in your Prismic repository.
-  langs: ['en-us', 'fr-fr'],
-}
+  // langs: ["en-us", "fr-fr", "pl"],
+  langs: ["en-us", "pl"],
+};
