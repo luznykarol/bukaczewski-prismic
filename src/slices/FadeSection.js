@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import { PrismicRichText } from "@prismicio/react";
@@ -8,16 +8,20 @@ export const FadeSection = ({ slice }) => {
   const arrLength = images.length;
 
   const [imageIndex, setImageIndex] = useState(1);
+  const ref = useRef();
 
   useEffect(() => {
     if (images) {
-      setInterval(() => {
+      ref.current = setInterval(() => {
         if (imageIndex < arrLength) {
           setImageIndex(imageIndex + 1);
         } else {
           setImageIndex(1);
         }
-      }, 5000);
+      }, 2000);
+      return () => {
+        clearInterval(ref.current);
+      };
     }
   }, [imageIndex]);
 
