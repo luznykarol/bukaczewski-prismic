@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, graphql } from "gatsby";
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import { StaticImage } from "gatsby-plugin-image";
-
+import HeaderNav from "./HeaderNav";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-
 export const Header = ({ topMenu, activeDocMeta }) => {
   const currentLang = activeDocMeta.lang;
 
@@ -21,6 +20,26 @@ export const Header = ({ topMenu, activeDocMeta }) => {
   const indexRoute = currentLang === "en-us" ? "/en-us" : "/";
 
   const [scroll, setScroll] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const node = useRef();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (node.current.contains(e.target)) {
+      return;
+    }
+    setMenuOpen(!menuOpen);
+  };
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [menuOpen]);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 88);
@@ -41,12 +60,27 @@ export const Header = ({ topMenu, activeDocMeta }) => {
               />
             </Link>
           </div>
-          <div className="menu">
+
+          <div className="header__list">
             <ul>
               {renderedMenuLinks}
               <LanguageSwitcher activeDocMeta={activeDocMeta} />
             </ul>
           </div>
+          <HeaderNav
+            menuOpen={menuOpen}
+            setMenuOpen={setMenuOpen}
+            activeDocMeta={activeDocMeta}
+            renderedMenuLinks={renderedMenuLinks}
+          />
+          <button
+            aria-label="Open mobile menu"
+            className={menuOpen ? "nav__btn nav__btn--open" : "nav__btn"}
+            onClick={() => setMenuOpen(!menuOpen)}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
     </header>

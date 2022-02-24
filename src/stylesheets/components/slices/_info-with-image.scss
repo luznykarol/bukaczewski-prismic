@@ -4,15 +4,11 @@
   // flex-direction: column;
   // margin: auto;
   // padding-bottom: 30px;
-
-  @media only screen and (min-width: $min-width-l) {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-bottom: 110px;
-  }
-
+  margin-top: 88px;
+  height: calc(100vh - 88px);
   .featured-image {
     position: relative;
+    height: 100%;
     width: 100%;
     // order: 2;
     // margin: 0;
@@ -48,6 +44,7 @@
 
       @media (min-width: $min-width-l) {
         display: block;
+        height: 100%;
       }
     }
   }

@@ -36,6 +36,7 @@ export const FadeSection = ({ slice }) => {
             }`}>
             <GatsbyImage
               alt="alt"
+              style={{ position: "absolute" }}
               className={`fadeImage fadeImage`}
               image={item.image?.gatsbyImageData}
               // alt={item.image?.alt}
