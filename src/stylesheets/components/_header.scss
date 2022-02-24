@@ -6,7 +6,7 @@
 .header {
   margin: auto;
   padding: 24px 0;
-  // height: 88px;
+
   flex-direction: row;
   justify-content: space-between;
   position: fixed;
@@ -108,7 +108,9 @@
       padding: 0;
 
       li {
-        margin: 0;
+        &:not(:last-of-type) {
+          margin-right: 32px;
+        }
       }
 
       .lang {
@@ -118,7 +120,7 @@
       a {
         color: inherit;
         display: inline-block;
-        padding: 0 10px;
+
         text-decoration: none;
         color: black;
         font-size: 1rem;
@@ -274,7 +276,7 @@ ul {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-
+    text-align: center;
     outline: none;
   }
   select::-ms-expand {

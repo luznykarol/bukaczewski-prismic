@@ -1,13 +1,12 @@
 .info-with-image {
+  height: calc(100vh - 88px - 79px);
   // display: flex;
   // align-items: unset;
   // flex-direction: column;
   // margin: auto;
   // padding-bottom: 30px;
-  margin-top: 88px;
-  height: calc(100vh - 88px);
+
   .featured-image {
-    position: relative;
     height: 100%;
     width: 100%;
     // order: 2;
@@ -53,14 +52,16 @@
     margin-bottom: 30px;
     text-align: left;
     color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // position: absolute;
+    // top: 50%;
+    // left: 16px;
+    // transform: translate(-16px, -50%);
 
     h1,
     h2 {
       margin-top: 20px;
+      color: #fff;
+      text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
     }
 
     h3 {
@@ -75,4 +76,9 @@
       font-size: 16px;
     }
   }
+}
+
+main {
+  margin-top: 88px;
+  min-height: calc(100vh - 88px - 79px);
 }

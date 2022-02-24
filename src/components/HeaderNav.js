@@ -15,7 +15,7 @@ const HeaderNav = ({
           : "header__list--mobile "
       }>
       <ul>
-        {renderedMenuLinks}a
+        {renderedMenuLinks}
         <LanguageSwitcher activeDocMeta={activeDocMeta} />
       </ul>
     </div>

@@ -99,4 +99,16 @@ section {
 ol,
 ul {
   list-style: none;
+
+  &::marker {
+    display: none;
+    content: "";
+  }
+
+  li {
+    &::marker {
+      display: none;
+      content: "";
+    }
+  }
 }

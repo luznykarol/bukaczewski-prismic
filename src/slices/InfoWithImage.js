@@ -9,7 +9,7 @@ export const InfoWithImage = ({ slice }) => {
   return (
     <section className="info-with-image">
       <div className="featured-image">
-        <GatsbyImage
+        {/* <GatsbyImage
           image={featuredImage?.thumbnails?.mobile?.gatsbyImageData}
           // alt={featuredImage?.alt}
           alt="aaa"
@@ -20,20 +20,20 @@ export const InfoWithImage = ({ slice }) => {
           // alt={featuredImage?.alt}
           alt="aaa"
           className="tablet-thumbnail"
-        />
+        /> */}
         <GatsbyImage
           image={featuredImage?.gatsbyImageData}
           // alt={featuredImage?.alt}
           alt="aaa"
           className="desktop"
         />
-        <div className="container">
-          <div className="text-content">
-            <PrismicRichText
-              className="text-content"
-              field={slice.primary.section_title.richText}
-            />
-          </div>
+      </div>
+      <div className="container absolute">
+        <div className="text-content">
+          <PrismicRichText
+            className="text-content"
+            field={slice.primary.section_title.richText}
+          />
         </div>
       </div>
     </section>

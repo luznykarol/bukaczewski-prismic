@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import { PrismicRichText } from "@prismicio/react";
+import Button from "../components/Button";
 
 export const FadeSection = ({ slice }) => {
   const images = slice.items;
@@ -50,6 +51,7 @@ export const FadeSection = ({ slice }) => {
                 }`}>
                 {item.title.text}
               </h2>
+              <Button text="Let's talk" />
             </div>
           </div>
         ))}
