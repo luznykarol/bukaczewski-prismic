@@ -11,17 +11,20 @@ export const InfoWithImage = ({ slice }) => {
       <div className="featured-image">
         <GatsbyImage
           image={featuredImage?.thumbnails?.mobile?.gatsbyImageData}
-          alt={featuredImage?.alt}
+          // alt={featuredImage?.alt}
+          alt="aaa"
           className="mobile-thumbnail"
         />
         <GatsbyImage
           image={featuredImage?.thumbnails?.tablet?.gatsbyImageData}
-          alt={featuredImage?.alt}
+          // alt={featuredImage?.alt}
+          alt="aaa"
           className="tablet-thumbnail"
         />
         <GatsbyImage
           image={featuredImage?.gatsbyImageData}
-          alt={featuredImage?.alt}
+          // alt={featuredImage?.alt}
+          alt="aaa"
           className="desktop"
         />
         <div className="container">

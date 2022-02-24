@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 
@@ -17,9 +17,6 @@ export const Layout = ({ children, topMenu, activeDocMeta }) => {
     }
   `);
 
-  const [height, setHeight] = useState(0);
-
-  console.log(height);
   return (
     <>
       <Helmet>
