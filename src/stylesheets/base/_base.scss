@@ -130,7 +130,12 @@ footer {
 }
 
 .fadeText {
-  font-size: 52px;
+  font-size: 44px;
+
+  @media only screen and (min-width: $min-width-md) {
+    font-size: 52px;
+  }
+
   font-weight: bold;
   max-width: 580px;
   color: #ffff;

@@ -23,7 +23,6 @@ export const Header = ({ topMenu, activeDocMeta }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const node = useRef();
-
   const handleClick = (e) => {
     e.preventDefault();
     if (node.current.contains(e.target)) {
@@ -67,12 +66,7 @@ export const Header = ({ topMenu, activeDocMeta }) => {
               <LanguageSwitcher activeDocMeta={activeDocMeta} />
             </ul>
           </div>
-          <HeaderNav
-            menuOpen={menuOpen}
-            setMenuOpen={setMenuOpen}
-            activeDocMeta={activeDocMeta}
-            renderedMenuLinks={renderedMenuLinks}
-          />
+
           <button
             aria-label="Open mobile menu"
             className={menuOpen ? "nav__btn nav__btn--open" : "nav__btn"}
@@ -83,6 +77,12 @@ export const Header = ({ topMenu, activeDocMeta }) => {
           </button>
         </div>
       </div>
+      <HeaderNav
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        activeDocMeta={activeDocMeta}
+        renderedMenuLinks={renderedMenuLinks}
+      />
     </header>
   );
 };
