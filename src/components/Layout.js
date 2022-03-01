@@ -14,8 +14,13 @@ export const Layout = ({ children, topMenu, activeDocMeta }) => {
           description
         }
       }
+      prismicPage {
+        url
+      }
     }
   `);
+
+  const indexRoute = activeDocMeta.lang === "en-us" ? "/en-us" : "/";
 
   return (
     <>
@@ -37,9 +42,13 @@ export const Layout = ({ children, topMenu, activeDocMeta }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <Header topMenu={topMenu} activeDocMeta={activeDocMeta} />
+      <Header
+        topMenu={topMenu}
+        indexRoute={indexRoute}
+        activeDocMeta={activeDocMeta}
+      />
       <main>{children}</main>
-      <Footer />
+      <Footer topMenu={topMenu} indexRoute={indexRoute} />
     </>
   );
 };

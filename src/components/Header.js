@@ -1,35 +1,33 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, graphql } from "gatsby";
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import { StaticImage } from "gatsby-plugin-image";
 import HeaderNav from "./HeaderNav";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-export const Header = ({ topMenu, activeDocMeta }) => {
-  const currentLang = activeDocMeta.lang;
 
-  const renderedMenuLinks = topMenu
-    ? topMenu.menu_links.map((menuLink, index) => (
-        <li key={`top-nav-${index}`}>
-          <PrismicLink href={menuLink.link.url}>
-            <PrismicText field={menuLink.label.richText} />
-          </PrismicLink>
-        </li>
-      ))
-    : null;
-
-  const indexRoute = currentLang === "en-us" ? "/en-us" : "/";
+export const Header = ({ topMenu, activeDocMeta, indexRoute }) => {
+  const renderedMenuLinks =
+    topMenu &&
+    topMenu.menu_links.map((menuLink, index) => (
+      <li className="nav__link" key={`top-nav-${index}`}>
+        <PrismicLink href={menuLink.link.url}>
+          <PrismicText field={menuLink.label.richText} />
+        </PrismicLink>
+      </li>
+    ));
 
   const [scroll, setScroll] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const node = useRef();
-  const handleClick = (e) => {
-    e.preventDefault();
-    if (node.current.contains(e.target)) {
-      return;
-    }
-    setMenuOpen(!menuOpen);
-  };
+  // const node = useRef();
+
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  //   if (node.current.contains(e.target)) {
+  //     return;
+  //   }
+  //   setMenuOpen(!menuOpen);
+  // };
 
   useEffect(() => {
     if (menuOpen) {

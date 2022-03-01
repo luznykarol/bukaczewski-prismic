@@ -1,32 +1,55 @@
-import * as React from 'react'
-import { navigate } from 'gatsby'
-
-import { linkResolver } from '../utils/linkResolver'
+import React, { useState, useEffect } from "react";
+import { navigate } from "gatsby";
+import { createHistory } from "@reach/router";
+import { linkResolver } from "../utils/linkResolver";
 
 export const LanguageSwitcher = ({ activeDocMeta }) => {
-  const currentLang = activeDocMeta.lang
-  const currentLangOption = (
-    <option value={currentLang}>{currentLang.slice(0, 2).toUpperCase()}</option>
-  )
+  const [checkboxValue, setCheckboxValue] = useState(false);
+  const [langValue, setLangValue] = useState("");
 
-  const alternateLangOptions = activeDocMeta.alternateLanguages.map(
-    (altLang, index) => (
-      <option value={linkResolver(altLang)} key={`alt-lang-${index}`}>
-        {altLang.lang.slice(0, 2).toUpperCase()}
-      </option>
-    ),
-  )
+  const currLang = activeDocMeta.lang;
 
-  const handleLangChange = (event) => {
-    navigate(event.target.value)
-  }
+  const altLang = activeDocMeta.alternateLanguages.map((altLang) =>
+    linkResolver(altLang)
+  )[0];
+
+  const handleLangChange = () => {
+    if (checkboxValue === false) {
+      setCheckboxValue(!checkboxValue);
+      setLangValue(altLang);
+      navigate(altLang);
+    } else {
+      setCheckboxValue(!checkboxValue);
+      setLangValue(currLang);
+      navigate(currLang);
+    }
+  };
+
+  useEffect(() => {
+    let history = createHistory(window);
+
+    if (history.location.pathname.includes("/en-us")) {
+      setLangValue(true);
+    } else {
+      setLangValue(false);
+    }
+  }, []);
 
   return (
-    <li className="language-switcher">
-      <select value={currentLang} onChange={handleLangChange}>
-        {currentLangOption}
-        {alternateLangOptions}
-      </select>
+    <li
+      className={
+        langValue ? "language-switcher blue" : "language-switcher red"
+      }>
+      <label
+        htmlFor="language"
+        className={langValue ? "lang english" : "lang polish"}>
+        <input
+          id="language"
+          onChange={handleLangChange}
+          type="checkbox"
+          value={langValue}
+        />
+      </label>
     </li>
-  )
-}
+  );
+};

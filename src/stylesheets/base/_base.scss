@@ -21,7 +21,12 @@ body {
   background-color: #fff;
   font-family: $font-sans-serif;
   letter-spacing: 0;
-  color: #27374c;
+  color: $text-grey;
+}
+
+a {
+  text-decoration: none;
+  color: $text-grey;
 }
 
 h1,
@@ -91,7 +96,7 @@ footer {
 }
 
 .fadeSection {
-  height: calc(100vh - 88px - 79px);
+  height: calc(100vh - 88px - 89px);
 }
 
 .fadeItem {

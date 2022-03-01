@@ -3,6 +3,26 @@
   overflow: hidden;
 }
 
+.menu {
+  display: flex;
+  position: relative;
+  z-index: 100;
+  justify-content: center;
+
+  @media only screen and (min-width: $min-width-md) {
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin-right: 4px;
+    vertical-align: text-top;
+
+    // @media only screen and (min-width: $min-width-md) {
+    width: 192px;
+    // }
+  }
+}
+
 .header {
   margin: auto;
   padding: 24px 0;
@@ -31,25 +51,6 @@
   &--active {
     box-shadow: 0 13px 48px 0 rgb(215 216 222 / 44%);
   }
-  .menu {
-    display: flex;
-    position: relative;
-    z-index: 100;
-    justify-content: center;
-
-    @media only screen and (min-width: $min-width-md) {
-      justify-content: space-between;
-    }
-
-    .logo {
-      margin-right: 4px;
-      vertical-align: text-top;
-
-      @media only screen and (min-width: $min-width-md) {
-        width: 75%;
-      }
-    }
-  }
 
   &__list--mobile {
     position: absolute;
@@ -73,7 +74,7 @@
       li {
         a {
           font-size: 32px;
-          color: black;
+          color: #27374c;
           text-align: center;
           margin-bottom: 16px;
         }
@@ -113,10 +114,6 @@
         }
       }
 
-      .lang {
-        padding: 0 4px;
-      }
-
       a {
         color: inherit;
         display: inline-block;
@@ -124,7 +121,7 @@
         text-decoration: none;
         color: black;
         font-size: 1rem;
-        font-weight: 600;
+        font-weight: 500;
 
         .slash {
           padding-left: 6px;
@@ -139,6 +136,10 @@
       }
     }
   }
+}
+
+.radio {
+  margin: 40px;
 }
 
 .switch-field {
@@ -255,7 +256,50 @@ ul {
 }
 
 .language-switcher {
-  color: grey;
+  background-color: $black;
+  position: relative;
+
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+
+  input {
+    opacity: 0;
+    visibility: hidden;
+  }
+  label {
+  }
+
+  .lang {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    &:before {
+      cursor: pointer;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+
+  .polish {
+    &:before {
+      content: "pl";
+    }
+  }
+
+  .english {
+    &:before {
+      content: "en";
+    }
+  }
 
   select {
     display: block;
@@ -294,5 +338,27 @@ ul {
   }
   select option {
     font-weight: normal;
+  }
+}
+
+.nav__link {
+  font-weight: 400;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $black;
+    transition: 0.4s all ease-in-out;
+  }
+
+  &:hover {
+    &:after {
+      width: 100%;
+    }
   }
 }
