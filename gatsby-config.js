@@ -11,6 +11,7 @@ module.exports = {
     description: "Sample multi-language website with Prismic CMS & Gatsby.js",
   },
   plugins: [
+    "gatsby-plugin-preload-fonts",
     {
       resolve: "gatsby-source-prismic",
       options: {

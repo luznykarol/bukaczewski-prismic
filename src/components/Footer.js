@@ -21,7 +21,7 @@ export const Footer = ({ indexRoute, topMenu }) => {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="flexBetween">
+        <div className="footer__inner">
           <Link to={indexRoute}>
             <div className="menu">
               <StaticImage

@@ -1,5 +1,6 @@
 .info-with-image {
   height: calc(100vh - 88px - 89px);
+  position: relative;
   // display: flex;
   // align-items: unset;
   // flex-direction: column;
@@ -81,5 +82,6 @@
 
 main {
   margin-top: 88px;
-  min-height: calc(100vh - 88px - 89px);
+  // min-height: calc(100vh - 88px - 89px);
+  min-height: calc(100vh - 88px);
 }

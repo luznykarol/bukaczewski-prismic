@@ -27,6 +27,12 @@
     }
   }
 
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
   .copyright {
     margin-top: 24px;
     text-align: left;

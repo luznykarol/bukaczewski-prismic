@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
-import { PrismicRichText } from "@prismicio/react";
-import Button from "../components/Button";
+import Icon from "../components/Icon";
+// import { PrismicRichText } from "@prismicio/react";
 
 export const FadeSection = ({ slice }) => {
   const images = slice.items;
@@ -27,34 +27,37 @@ export const FadeSection = ({ slice }) => {
   }, [imageIndex]);
 
   return (
-    <section className="fadeSection">
-      <div className="fadeContainer">
+    <section className="fade__section">
+      <div className="fade__container">
         {images.map((item, index) => (
           <div
             key={index}
-            className={`fadeItem fadeItem-${
+            className={`fade__item fade__item--${
               index + 1 === imageIndex ? "visible" : "fade"
             }`}>
             <GatsbyImage
               alt="alt"
               style={{ position: "absolute" }}
-              className={`fadeImage fadeImage`}
+              className={`fade__image`}
               image={item.image?.gatsbyImageData}
               // alt={item.image?.alt}
             />
             <div className="container">
               <h2
-                className={`fadeText fadeText-${
+                className={` ${
                   index + 1 === imageIndex
-                    ? "fadeText fadeText--visible"
-                    : "fadeText"
+                    ? "fade__text fade__text--visible"
+                    : "fade__text"
                 }`}>
                 {item.title.text}
               </h2>
-              <Button text="Let's talk" />
             </div>
           </div>
         ))}
+        <div className="fade__link">
+          Dowiedz się więcej
+          <Icon className="icon icon__arrowDown" icon="arrowDown" />
+        </div>
       </div>
     </section>
   );
