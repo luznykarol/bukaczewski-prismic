@@ -8,17 +8,15 @@ const HeaderNav = ({
   setMenuOpen,
 }) => {
   return (
-    <div
+    <ul
       className={
         menuOpen
           ? "header__list--mobile header__list--mobile--open"
           : "header__list--mobile "
       }>
-      <ul>
-        {renderedMenuLinks}
-        <LanguageSwitcher activeDocMeta={activeDocMeta} />
-      </ul>
-    </div>
+      {renderedMenuLinks}
+      <LanguageSwitcher activeDocMeta={activeDocMeta} />
+    </ul>
   );
 };
 

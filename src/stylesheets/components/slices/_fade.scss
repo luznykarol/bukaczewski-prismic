@@ -7,7 +7,11 @@
 
   &__section {
     // height: calc(100vh - 88px - 89px);
-    height: calc(100vh - 88px);
+    height: calc(100vh - 72px);
+
+    @media (min-width: $min-width-md) {
+      height: calc(100vh - 88px);
+    }
   }
 
   &__link {

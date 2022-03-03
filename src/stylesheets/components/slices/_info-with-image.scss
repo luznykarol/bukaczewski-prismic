@@ -1,6 +1,14 @@
 .info-with-image {
-  height: calc(100vh - 88px - 89px);
+  // height: calc(100vh - 88px - 89px);
   position: relative;
+
+  // height: calc(100vh - 88px - 89px);
+  height: calc(100vh - 72px);
+
+  @media (min-width: $min-width-md) {
+    height: calc(100vh - 88px);
+  }
+
   // display: flex;
   // align-items: unset;
   // flex-direction: column;
@@ -81,7 +89,11 @@
 }
 
 main {
-  margin-top: 88px;
-  // min-height: calc(100vh - 88px - 89px);
-  min-height: calc(100vh - 88px);
+  margin-top: 72px;
+  height: calc(100vh - 72px);
+
+  @media (min-width: $min-width-md) {
+    margin-top: 88px;
+    height: calc(100vh - 88px);
+  }
 }

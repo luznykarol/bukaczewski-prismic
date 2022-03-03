@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
-export const Layout = ({ children, topMenu, activeDocMeta }) => {
+export const Layout = ({ children, contactInfo, topMenu, activeDocMeta }) => {
   const queryData = useStaticQuery(graphql`
     query SiteQuery {
       site {
@@ -48,7 +48,11 @@ export const Layout = ({ children, topMenu, activeDocMeta }) => {
         activeDocMeta={activeDocMeta}
       />
       <main>{children}</main>
-      <Footer topMenu={topMenu} indexRoute={indexRoute} />
+      <Footer
+        contactInfo={contactInfo}
+        topMenu={topMenu}
+        indexRoute={indexRoute}
+      />
     </>
   );
 };

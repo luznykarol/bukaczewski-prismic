@@ -11,6 +11,7 @@ const HomepageTemplate = ({ data }) => {
 
   const homepage = data.prismicHomepage || {};
   const topMenu = data.prismicTopMenu || {};
+  const contactInfo = data.prismicContactInfo || {};
 
   const { lang, type, url } = homepage || {};
   const alternateLanguages = homepage.alternate_languages || [];
@@ -22,7 +23,10 @@ const HomepageTemplate = ({ data }) => {
   };
 
   return (
-    <Layout topMenu={topMenu.data} activeDocMeta={activeDoc}>
+    <Layout
+      contactInfo={contactInfo.data}
+      topMenu={topMenu.data}
+      activeDocMeta={activeDoc}>
       <SliceZone slices={homepage.data.body} components={components} />
     </Layout>
   );
@@ -58,6 +62,9 @@ export const query = graphql`
     }
     prismicTopMenu(lang: { eq: $lang }) {
       ...TopMenuFragment
+    }
+    prismicContactInfo(lang: { eq: $lang }) {
+      ...ContactInfoFragment
     }
   }
 `;

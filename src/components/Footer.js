@@ -1,12 +1,12 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { PrismicLink, PrismicText } from "@prismicio/react";
-import { Link } from "gatsby";
-import twitterIcon from "../images/twitter.png";
-import instagramIcon from "../images/instagram.png";
-import facebookIcon from "../images/facebook.png";
+import { PrismicLink, PrismicText, PrismicRichText } from "@prismicio/react";
+import { Link, graphql } from "gatsby";
+import Icon from "../components/Icon";
 
-export const Footer = ({ indexRoute, topMenu }) => {
+export const Footer = ({ indexRoute, topMenu, contactInfo }) => {
+  const { address, email, linkedin, phone, title } = contactInfo;
+
   const renderedMenuLinks =
     topMenu &&
     topMenu.menu_links.map((menuLink, index) => (
@@ -22,7 +22,7 @@ export const Footer = ({ indexRoute, topMenu }) => {
     <footer className="footer">
       <div className="container">
         <div className="footer__inner">
-          <Link to={indexRoute}>
+          <Link className="footer__logo" to={indexRoute}>
             <div className="menu">
               <StaticImage
                 src="../images/logo.png"
@@ -32,16 +32,30 @@ export const Footer = ({ indexRoute, topMenu }) => {
               />
             </div>
           </Link>
+          <div className="footer__lists">
+            <nav className="footer__list">
+              <div className="footer__list__title">Menu</div>
+              {renderedMenuLinks}
+            </nav>
 
-          <nav className="footer__list">
-            <div className="footer__list__title">Menu</div>
-            {renderedMenuLinks}
-          </nav>
+            <ul className="footer__contact">
+              <a className="footer__contact__item" href={phone.url}>
+                <Icon className="footer__icon" icon="phone" />
+                {phone.url.substr(5)}
+              </a>
 
-          <div className="social">
-            <img src={facebookIcon} alt="Facebook social icon" />
-            <img src={instagramIcon} alt="Instagram social icon" />
-            <img src={twitterIcon} alt="Twitter social icon" />
+              <a className="footer__contact__item" href={email.url}>
+                <Icon className="footer__icon" icon="email" />
+                {email.url.substr(8)}
+              </a>
+              <li className="footer__contact__item">
+                <Icon className="footer__icon" icon="address" />
+                <PrismicRichText field={address.richText} />
+              </li>
+            </ul>
+            <div className="footer__social">
+              <Icon className="footer__social__icon" icon="linkedin" />
+            </div>
           </div>
         </div>
         <p className="copyright">
@@ -51,3 +65,28 @@ export const Footer = ({ indexRoute, topMenu }) => {
     </footer>
   );
 };
+
+export const query = graphql`
+  fragment ContactInfoFragment on PrismicContactInfo {
+    _previewable
+    type
+    lang
+    data {
+      title {
+        text
+      }
+      email {
+        url
+      }
+      linkedin {
+        url
+      }
+      phone {
+        url
+      }
+      address {
+        richText
+      }
+    }
+  }
+`;

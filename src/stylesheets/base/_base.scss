@@ -9,6 +9,7 @@ html {
   border: 0;
   font-size: 100%;
   box-sizing: border-box;
+  font-size: 16px;
 }
 ::selection {
   background: #fff7c7; /* WebKit/Blink Browsers */
@@ -55,10 +56,6 @@ main,
 header,
 footer {
   margin: 0 auto;
-}
-
-footer {
-  padding: 24px 16px;
 }
 
 @media only screen and (min-width: $min-width-xl) {

@@ -215,6 +215,47 @@
               }
             },
             "repeat": {}
+          },
+          "fadesection": {
+            "type": "Slice",
+            "fieldset": "FadeSection",
+            "description": "fade",
+            "icon": "account_balance",
+            "display": "list",
+            "non-repeat": {
+              "link_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "label": "Link text"
+                }
+              },
+              "link_to_section": {
+                "type": "Link",
+                "config": {
+                  "label": "link to section"
+                }
+              }
+            },
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 1980
+                  },
+                  "thumbnails": [],
+                  "label": "image"
+                }
+              },
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                  "label": "title"
+                }
+              }
+            }
           }
         }
       }
