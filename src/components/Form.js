@@ -94,8 +94,6 @@ const ContactForm = ({ title }) => {
   //   }),
   // };
 
-  console.log("err", errors);
-
   return (
     <form
       id="form_1"

@@ -18,8 +18,10 @@ export const ContactSection = ({ slice, prismicContactInfo }) => {
       <div className="container">
         <div className="grid">
           <div className="grid__col">
-            <h2>{title.text}</h2>
-            <PrismicRichText field={description.richText} />
+            <div className="text__container">
+              <h2>{title.text}</h2>
+              <PrismicRichText field={description.richText} />
+            </div>
             <ul className="contact__list">
               <a className="contact__list__item" href={phone.url}>
                 <Icon className="footer__icon" icon="phone" />

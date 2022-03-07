@@ -1,32 +1,17 @@
 .contact {
   &__section {
-    height: 100%;
+    min-height: calc(100vh - 72px);
+
+    @media (min-width: $min-width-md) {
+      min-height: calc(100vh - 88px);
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: $grey-bg;
 
     .container {
       height: 100%;
-
-      .grid {
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        height: 100%;
-
-        @media (min-width: $min-width-md) {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        &__col {
-          display: flex;
-          justify-content: center;
-
-          flex-direction: column;
-
-          &--center {
-            align-items: center;
-          }
-        }
-      }
     }
   }
 
@@ -42,10 +27,31 @@
 }
 
 .card {
-  box-shadow: 0 13px 48px 0 rgb(215 216 222 / 44%);
+  box-shadow: 0 13px 48px 0 rgb(218 218 218 / 44%);
   border-radius: 10px;
   background-color: $white;
   width: 80%;
   height: 80%;
   padding: 32px;
+}
+
+.grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $min-width-md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__col {
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+
+    &--center {
+      align-items: center;
+    }
+  }
 }

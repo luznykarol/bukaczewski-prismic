@@ -81,15 +81,18 @@ em {
 }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width: $min-width-l) {
-  h1 {
-    font-size: 4rem;
-    line-height: 4.75rem;
-  }
 
+@media (min-width: $min-width-md) {
   h2 {
     line-height: 67px;
     font-size: 48px;
     font-weight: 600;
+  }
+}
+
+@media only screen and (min-width: $min-width-l) {
+  h1 {
+    font-size: 4rem;
+    line-height: 4.75rem;
   }
 }

@@ -12,6 +12,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-preload-fonts",
+    "gatsby-plugin-anchor-links",
     {
       resolve: "gatsby-source-prismic",
       options: {
@@ -23,6 +24,7 @@ module.exports = {
           page: require("./custom_types/page.json"),
           top_menu: require("./custom_types/top_menu.json"),
           contact_info: require("./custom_types/contact_info.json"),
+          team_member: require("./custom_types/team_member.json"),
         },
       },
     },

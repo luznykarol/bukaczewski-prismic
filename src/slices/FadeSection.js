@@ -2,17 +2,19 @@ import React, { useEffect, useState, useRef } from "react";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import Icon from "../components/Icon";
+import AnchorLink from "../components/AnchorLink";
 // import { PrismicRichText } from "@prismicio/react";
 
 export const FadeSection = ({ slice }) => {
-  const images = slice.items;
-  const arrLength = images.length;
+  const { items, primary } = slice;
+
+  const arrLength = items.length;
 
   const [imageIndex, setImageIndex] = useState(1);
   const ref = useRef();
 
   useEffect(() => {
-    if (images) {
+    if (items) {
       ref.current = setInterval(() => {
         if (imageIndex < arrLength) {
           setImageIndex(imageIndex + 1);
@@ -29,7 +31,7 @@ export const FadeSection = ({ slice }) => {
   return (
     <section className="fade__section">
       <div className="fade__container">
-        {images.map((item, index) => (
+        {items.map((item, index) => (
           <div
             key={index}
             className={`fade__item fade__item--${
@@ -55,8 +57,11 @@ export const FadeSection = ({ slice }) => {
           </div>
         ))}
         <div className="fade__link">
-          Dowiedz się więcej
-          <Icon className="icon icon__arrowDown" icon="arrowDown" />
+          <div className="fade__link__inner">
+            {/* Dowiedz się więcej */}
+            <Icon className="icon icon__arrowDown" icon="arrowDown" />
+            <AnchorLink href={`${primary.section_id.text}`} />
+          </div>
         </div>
       </div>
     </section>
@@ -65,6 +70,11 @@ export const FadeSection = ({ slice }) => {
 
 export const query = graphql`
   fragment HomepageDataBodyFadesection on PrismicHomepageDataBodyFadesection {
+    primary {
+      section_id {
+        text
+      }
+    }
     items {
       title {
         text

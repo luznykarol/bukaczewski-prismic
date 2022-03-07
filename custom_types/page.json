@@ -262,6 +262,69 @@
               "title": {
                 "type": "StructuredText",
                 "config": {
+                  "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                  "label": "Title"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "description"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "collapse_section": {
+            "type": "Slice",
+            "fieldset": "Collapse section",
+            "description": "collapse",
+            "icon": "account_balance_wallet",
+            "display": "list",
+            "non-repeat": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                  "label": "Title"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "Description"
+                }
+              }
+            },
+            "repeat": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                  "label": "Title"
+                }
+              },
+              "list": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "list-item",
+                  "label": "list"
+                }
+              }
+            }
+          },
+          "team_section": {
+            "type": "Slice",
+            "fieldset": "Team Section",
+            "description": "team section",
+            "icon": "accessibility",
+            "display": "list",
+            "non-repeat": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
                   "single": "heading1, heading2, heading3, heading4, heading5, heading6",
                   "label": "Title"
                 }
@@ -270,7 +333,7 @@
                 "type": "StructuredText",
                 "config": {
                   "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-                  "label": "description"
+                  "label": "Description"
                 }
               }
             },

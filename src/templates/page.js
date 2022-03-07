@@ -65,6 +65,7 @@ export const query = graphql`
           ...PageDataBodyInfoWithImage
           ...PageDataBodyTextInfo
           ...PageDataBodyContactsection
+          ...PageDataBodyCollapseSection
         }
       }
     }

@@ -1,0 +1,134 @@
+.collapse {
+  &__section {
+    padding: 48px 0;
+    background-color: $grey-bg;
+
+    @media (min-width: $min-width-md) {
+      padding: 120px 0;
+    }
+  }
+
+  &__text {
+    h2 {
+      margin: 0 0 16px 0;
+
+      @media (min-width: 414px) {
+        margin: 0 0 24px 0;
+      }
+    }
+
+    margin: 0 0 48px 0;
+
+    @media (min-width: $min-width-md) {
+      margin: 0 0 120px 0;
+    }
+  }
+
+  &__container {
+    // display: flex;
+    // flex-wrap: wrap;
+
+    @media (min-width: $min-width-md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 24px;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    // max-width: 45%;
+
+    margin-bottom: 24px;
+    // width: 100%;
+
+    h4 {
+      font-weight: 600;
+
+      line-height: 1.2;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      max-width: 270px;
+      font-size: 18px;
+
+      @media (min-width: 414px) {
+        max-width: 370px;
+        line-height: 32px;
+        font-size: $largest;
+      }
+
+      @media (min-width: $min-width-md) {
+        min-height: 64px;
+      }
+      @media (min-width: $min-width-l) {
+        font-size: 24px;
+      }
+    }
+
+    &__inner {
+      position: relative;
+      box-shadow: 0 13px 48px 0 rgb(218 218 218 / 44%);
+      width: 100%;
+      border-radius: 10px;
+      background-color: $white;
+      padding: 16px;
+
+      @media (min-width: $min-width-md) {
+        padding: 24px;
+      }
+    }
+
+    @media (min-width: $min-width-md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    width: 32px;
+    height: 24px;
+    transition: 0.4s all ease-in-out;
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list {
+    margin: 16px 0 0 0;
+    ul {
+      li {
+        padding-left: 16px;
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 5px;
+          height: 5px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: $grey-logo;
+          border-radius: 100%;
+        }
+        &:not(:last-of-type) {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}
