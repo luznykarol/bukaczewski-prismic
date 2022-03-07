@@ -4,6 +4,7 @@ import Linkedin from "../icons/linkedin";
 import Phone from "../icons/phone";
 import Email from "../icons/email";
 import Address from "../icons/address";
+import Logo from "../icons/logo";
 
 const Icon = ({ icon, className }) => {
   const icons = {
@@ -12,6 +13,7 @@ const Icon = ({ icon, className }) => {
     email: Email,
     phone: Phone,
     address: Address,
+    logo: Logo,
   };
 
   const Icon = icons[icon];

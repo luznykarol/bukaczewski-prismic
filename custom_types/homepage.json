@@ -210,7 +210,22 @@
             "description": "fade",
             "icon": "account_balance",
             "display": "list",
-            "non-repeat": {},
+            "non-repeat": {
+              "button_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "label": "button text"
+                }
+              },
+              "section_id": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "label": "section id"
+                }
+              }
+            },
             "repeat": {
               "image": {
                 "type": "Image",
@@ -227,6 +242,13 @@
                 "config": {
                   "single": "heading1,heading2,heading3,heading4,heading5,heading6",
                   "label": "title"
+                }
+              },
+              "button_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "button text"
                 }
               }
             }

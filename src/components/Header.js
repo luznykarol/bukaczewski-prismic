@@ -4,6 +4,7 @@ import { PrismicLink, PrismicText } from "@prismicio/react";
 import { StaticImage } from "gatsby-plugin-image";
 import HeaderNav from "./HeaderNav";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import Icon from "./Icon";
 
 export const Header = ({ topMenu, activeDocMeta, indexRoute }) => {
   const renderedMenuLinks =
@@ -37,10 +38,12 @@ export const Header = ({ topMenu, activeDocMeta, indexRoute }) => {
     }
   }, [menuOpen]);
 
+  const handleScroll = () => setScroll(window.scrollY > 88);
+
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 88);
-    });
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -49,12 +52,7 @@ export const Header = ({ topMenu, activeDocMeta, indexRoute }) => {
         <div className="header__inner">
           <div className="menu">
             <Link to={indexRoute}>
-              <StaticImage
-                src="../images/logo.png"
-                alt="Site logo"
-                placeholder="none"
-                className="logo"
-              />
+              <Icon className="logo" icon="logo" />
             </Link>
           </div>
 

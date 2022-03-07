@@ -5,6 +5,8 @@ import { InfoWithImage } from "./InfoWithImage";
 import { FadeSection } from "./FadeSection";
 import { TextInfo } from "./TextInfo";
 
+import { ContactSection } from "./ContactSection";
+
 export const components = {
   headline_with_button: HeadlineWithButton,
   email_signup: EmailSignup,
@@ -12,4 +14,5 @@ export const components = {
   full_width_image: FullWidthImage,
   info_with_image: InfoWithImage,
   text_info: TextInfo,
+  contactsection: ContactSection,
 };

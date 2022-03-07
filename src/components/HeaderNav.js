@@ -16,6 +16,7 @@ const HeaderNav = ({
       }>
       {renderedMenuLinks}
       <LanguageSwitcher activeDocMeta={activeDocMeta} />
+      <div className="shadow"></div>
     </ul>
   );
 };

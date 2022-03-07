@@ -22,6 +22,15 @@ export const Layout = ({ children, contactInfo, topMenu, activeDocMeta }) => {
 
   const indexRoute = activeDocMeta.lang === "en-us" ? "/en-us" : "/";
 
+  const childrenWithProps = React.Children.map(children, (child) => {
+    // Checking isValidElement is the safe way and avoids a typescript
+    // error too.
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, contactInfo);
+    }
+    return child;
+  });
+
   return (
     <>
       <Helmet>
@@ -32,13 +41,10 @@ export const Layout = ({ children, contactInfo, topMenu, activeDocMeta }) => {
           content={queryData.site.siteMetadata.description}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-          href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
           rel="stylesheet"
         />
       </Helmet>
@@ -47,7 +53,11 @@ export const Layout = ({ children, contactInfo, topMenu, activeDocMeta }) => {
         indexRoute={indexRoute}
         activeDocMeta={activeDocMeta}
       />
-      <main>{children}</main>
+      <main>
+        {/* <>{React.cloneElement(children, { contactInfo: contactInfo })}</>
+        {children} */}
+        {childrenWithProps}
+      </main>
       <Footer
         contactInfo={contactInfo}
         topMenu={topMenu}

@@ -24,19 +24,11 @@ export const Footer = ({ indexRoute, topMenu, contactInfo }) => {
         <div className="footer__inner">
           <Link className="footer__logo" to={indexRoute}>
             <div className="menu">
-              <StaticImage
-                src="../images/logo.png"
-                alt="Site logo"
-                placeholder="none"
-                className="logo"
-              />
+              <Icon className="logo" icon="logo" />
             </div>
           </Link>
           <div className="footer__lists">
-            <nav className="footer__list">
-              <div className="footer__list__title">Menu</div>
-              {renderedMenuLinks}
-            </nav>
+            <nav className="footer__list">{renderedMenuLinks}</nav>
 
             <ul className="footer__contact">
               <a className="footer__contact__item" href={phone.url}>
@@ -53,14 +45,20 @@ export const Footer = ({ indexRoute, topMenu, contactInfo }) => {
                 <PrismicRichText field={address.richText} />
               </li>
             </ul>
-            <div className="footer__social">
-              <Icon className="footer__social__icon" icon="linkedin" />
+            <div className="footer__social padtop">
+              <a rel="noopener noreferrer" target="_blank" href={linkedin.url}>
+                <Icon className="footer__social__icon" icon="linkedin" />
+              </a>
             </div>
           </div>
         </div>
-        <p className="copyright">
-          &copy; {new Date().getFullYear()} by Łukasz Bukaczewski
-        </p>
+      </div>
+      <div className="copyright">
+        <div className="container">
+          <p className="">
+            &copy; {new Date().getFullYear()} by Łukasz Bukaczewski
+          </p>
+        </div>
       </div>
     </footer>
   );

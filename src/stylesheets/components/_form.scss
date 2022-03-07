@@ -1,0 +1,79 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+.field {
+  // @apply relative flex flex-col;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  &__label {
+    // @apply block text-black text-sm mb-2 font-medium;
+    display: block;
+    color: $black;
+    font-size: $smaller;
+    margin-bottom: 16px;
+  }
+
+  &__input,
+  &__textarea {
+    // @apply border-1 text-white border-input  w-full px-4 py-2  rounded-lg bg-cam-purple-light;
+    border-bottom: 1px solid $grey-border;
+    // color: $white;
+    width: 100%;
+    // padding: 8px 0;
+    // border-radius: 10px;
+
+    // height: 3.313rem;
+    // height: 48px;
+    padding: 8px 0;
+    transition: 0.4s outline ease;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 15px) 50%;
+
+    &::placeholder {
+      // @apply text-white;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      outline: none;
+      // outline-color: #163662;
+      border-bottom: 1px solid $black;
+      &::placeholder {
+        color: $black;
+      }
+    }
+    &__error {
+      border-bottom: 1px solid $red;
+
+      &::placeholder {
+      }
+    }
+  }
+
+  &__textarea {
+    // @apply leading-6;
+    min-height: 180px;
+  }
+
+  &__error {
+    // @apply absolute left-0 text-red text-sm font-normal w-full text-left leading-none inline-block;
+    color: $red;
+    font-size: $smallest;
+    position: relative;
+    top: 4px;
+  }
+}
+
+.form {
+  .button {
+    margin: 30px auto 0;
+    display: flex;
+    align-items: center;
+  }
+}

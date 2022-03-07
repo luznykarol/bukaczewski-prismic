@@ -105,8 +105,13 @@
     height: 201px;
     display: flex;
     align-items: center;
-    font-size: 44px;
+    font-size: 38px;
     color: #fff;
+    line-height: 1.2;
+
+    @media only screen and (min-width: 375px) {
+      font-size: 44px;
+    }
 
     @media only screen and (min-width: $min-width-md) {
       font-size: 52px;

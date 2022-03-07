@@ -17,13 +17,7 @@
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": {
-          "headline_with_button": [],
-          "full_width_image": [],
-          "info_with_image": [],
-          "text_info": [],
-          "email_signup": []
-        },
+        "labels": null,
         "choices": {
           "headline_with_button": {
             "type": "Slice",
@@ -226,14 +220,15 @@
               "link_text": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
                   "label": "Link text"
                 }
               },
               "link_to_section": {
                 "type": "Link",
                 "config": {
-                  "label": "link to section"
+                  "label": "link to section",
+                  "select": null
                 }
               }
             },
@@ -256,6 +251,30 @@
                 }
               }
             }
+          },
+          "contactsection": {
+            "type": "Slice",
+            "fieldset": "ContactSection",
+            "description": "Section for for contact page ",
+            "icon": "accessible",
+            "display": "list",
+            "non-repeat": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "Title"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+                  "label": "description"
+                }
+              }
+            },
+            "repeat": {}
           }
         }
       }

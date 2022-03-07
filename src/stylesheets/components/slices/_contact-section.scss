@@ -1,0 +1,51 @@
+.contact {
+  &__section {
+    height: 100%;
+    background-color: $grey-bg;
+
+    .container {
+      height: 100%;
+
+      .grid {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100%;
+
+        @media (min-width: $min-width-md) {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        &__col {
+          display: flex;
+          justify-content: center;
+
+          flex-direction: column;
+
+          &--center {
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+
+  &__list {
+    margin: 24px 0 0;
+    &__item {
+      display: flex;
+      align-items: center;
+
+      margin: 0 0 16px 0;
+    }
+  }
+}
+
+.card {
+  box-shadow: 0 13px 48px 0 rgb(215 216 222 / 44%);
+  border-radius: 10px;
+  background-color: $white;
+  width: 80%;
+  height: 80%;
+  padding: 32px;
+}

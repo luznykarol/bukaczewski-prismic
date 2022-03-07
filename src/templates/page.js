@@ -28,7 +28,11 @@ const PageTemplate = ({ data }) => {
       contactInfo={contactInfo.data}
       topMenu={topMenu.data}
       activeDocMeta={activeDoc}>
-      <SliceZone slices={page.body} components={components} />
+      <SliceZone
+        contactInfo={contactInfo.data}
+        slices={page.body}
+        components={components}
+      />
     </Layout>
   );
 };
@@ -60,6 +64,7 @@ export const query = graphql`
           ...PageDataBodyHeadlineWithButton
           ...PageDataBodyInfoWithImage
           ...PageDataBodyTextInfo
+          ...PageDataBodyContactsection
         }
       }
     }
