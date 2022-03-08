@@ -7,10 +7,8 @@ import { useTeam } from "../hooks/use-team";
 
 export const TeamSection = ({ slice }) => {
   const [textOverflow, setTextOverflow] = useState(false);
-  console.log("SLICE", slice);
 
   const team = useTeam();
-  console.log("TEAM", team);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -49,11 +47,13 @@ export const TeamSection = ({ slice }) => {
         </article>
 
         <article className="team__item">
-          <GatsbyImage
-            image={team?.image.gatsbyImageData}
-            className="team__image"
-            alt={team.name.text}
-          />
+          <div className="teamouter">
+            <GatsbyImage
+              image={team?.image.gatsbyImageData}
+              className="team__image"
+              alt={team.name.text}
+            />
+          </div>
           <div className="team__box">
             <div
               className={

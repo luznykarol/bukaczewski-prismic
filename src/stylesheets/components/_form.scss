@@ -5,30 +5,66 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
 
-.field {
+.fieldNew,
+.textNew {
   // @apply relative flex flex-col;
   position: relative;
   display: flex;
   flex-direction: column;
-  &__label {
-    // @apply block text-black text-sm mb-2 font-medium;
+  margin: 0 auto 16px auto;
+  // &__label {
+  //   // @apply block text-black text-sm mb-2 font-medium;
+  //   display: block;
+  //   color: $black;
+  //   font-size: $smaller;
+  //   margin-bottom: 16px;
+  // }
+
+  textarea {
+    min-height: 180px;
+  }
+  input,
+  textarea {
+    padding: 16px 0;
+
+    border-bottom: 1px solid $grey-border;
+
+    &:focus,
+    &:hover,
+    &:active {
+      outline: none;
+
+      border-bottom: 1px solid $black;
+      &::placeholder {
+        color: $black;
+      }
+    }
+  }
+
+  label {
+    font-size: 12px;
+    color: gray;
+  }
+
+  span {
+    font-size: $smallest;
+    padding: 3px 0;
+    color: red;
+    display: none;
+  }
+
+  input:invalid[focused="true"] {
+    border-bottom: 1px solid $red;
+  }
+
+  input:invalid[focused="true"] ~ span {
     display: block;
-    color: $black;
-    font-size: $smaller;
-    margin-bottom: 16px;
   }
 
   &__input,
   &__textarea {
-    // @apply border-1 text-white border-input  w-full px-4 py-2  rounded-lg bg-cam-purple-light;
     border-bottom: 1px solid $grey-border;
-    // color: $white;
     width: 100%;
-    // padding: 8px 0;
-    // border-radius: 10px;
-
-    // height: 3.313rem;
-    // height: 48px;
     padding: 8px 0;
     transition: 0.4s outline ease;
     background-repeat: no-repeat;
@@ -42,7 +78,7 @@ input:-webkit-autofill:active {
     &:hover,
     &:active {
       outline: none;
-      // outline-color: #163662;
+
       border-bottom: 1px solid $black;
       &::placeholder {
         color: $black;
@@ -76,4 +112,44 @@ input:-webkit-autofill:active {
     display: flex;
     align-items: center;
   }
+}
+
+.formInput {
+  // display: flex;
+  // flex-direction: column;
+  // width: 280px;
+  border-bottom: 1px solid $grey-border;
+  width: 100%;
+  padding: 8px 0;
+  transition: 0.4s outline ease;
+}
+
+.teamouter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success {
+  background-color: $green;
+  color: $white;
+  padding: 8px;
+  font-size: $smallest;
+  text-align: center;
+}
+
+.contact-slide-enter {
+  opacity: 0;
+}
+.contact-slide-enter-active {
+  opacity: 1;
+  transiton: opacity 0.4s ease;
+}
+.contact-slide-exit {
+  opacity: 1;
+}
+
+.contact-slide-exit-active {
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }

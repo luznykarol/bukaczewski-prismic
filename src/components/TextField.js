@@ -1,41 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function TextField(props) {
-  const {
-    label,
-    name,
-    error,
-    required,
-    onChange,
-    errorMessage,
-    register,
-    className,
-    placeholder,
-  } = props;
+const FormInput = (props) => {
+  const [focused, setFocused] = useState(false);
+  const { label, errorMessage, onChange, id, ...inputProps } = props;
 
-  const inputError = error && (
-    <span className="field__error">{errorMessage}</span>
-  );
+  const handleFocus = (e) => {
+    setFocused(true);
+  };
 
   return (
-    <div className={className ? `field ${className}` : "field"}>
-      <label className="field__label" htmlFor={name}>
-        {label}
-      </label>
+    <div className="textNew">
       <textarea
+        {...inputProps}
         onChange={onChange}
-        name={name}
-        placeholder={placeholder}
-        id={name}
-        ref={register}
-        className={
-          !error
-            ? "field__textarea border-input"
-            : "field__textarea field__textarea__error"
+        onBlur={handleFocus}
+        onFocus={() =>
+          inputProps.name === "confirmPassword" && setFocused(true)
         }
-        required={required}
+        focused={focused.toString()}
       />
-      {inputError}
+      <span>{errorMessage}</span>
     </div>
   );
-}
+};
+
+export default FormInput;

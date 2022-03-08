@@ -1,51 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
-const InputField = (props) => {
-  const {
-    label,
-    name,
-    error,
-    type,
-    placeholder,
-    required,
-    onChange,
-    errorMessage,
-    register,
-    value,
-    className,
-    errorLeft,
-  } = props;
+const FormInput = (props) => {
+  const [focused, setFocused] = useState(false);
+  const { label, errorMessage, onChange, id, ...inputProps } = props;
 
-  const inputError = error && (
-    <span
-      className={
-        errorLeft ? "field__error field__error--left" : "field__error"
-      }>
-      {errorMessage}
-    </span>
-  );
+  const handleFocus = (e) => {
+    setFocused(true);
+  };
+
   return (
-    <div className={className ? `field ${className}` : "field"}>
-      <label className="field__label" htmlFor={name}>
-        {label}
-      </label>
+    <div className="fieldNew">
       <input
-        className={
-          !error
-            ? "field__input border-input "
-            : "field__input field__input__error"
-        }
+        {...inputProps}
         onChange={onChange}
-        type={type}
-        name={name}
-        id={name}
-        defaultValue={value}
-        placeholder={placeholder}
-        required={required}
+        onBlur={handleFocus}
+        onFocus={() =>
+          inputProps.name === "confirmPassword" && setFocused(true)
+        }
+        focused={focused.toString()}
       />
-      {inputError}
+      <span>{errorMessage}</span>
     </div>
   );
 };
 
-export default InputField;
+export default FormInput;

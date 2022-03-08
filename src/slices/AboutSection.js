@@ -9,7 +9,6 @@ export const AboutSection = ({ slice }) => {
   const { items, primary } = slice;
 
   const team = useTeam();
-  console.log("TEAM", team);
 
   console.log(team);
   return (

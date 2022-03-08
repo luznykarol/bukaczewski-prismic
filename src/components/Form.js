@@ -11,32 +11,50 @@ import InputField from "./InputField";
 import TextField from "./TextField";
 
 const ContactForm = ({ title }) => {
-  // const { register, handleSubmit, reset, errors } = useForm({
-  //   mode: "onBlur",
-  // });
-
-  const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required("First Name is required"),
-    // lastName: Yup.string().required("Last name is required"),
-    email: Yup.string().required("Email is required").email("Email is invalid"),
-    // acceptTerms: Yup.bool().oneOf([true], "Accept Ts & Cs is required"),
-  });
-
-  const formOptions = { resolver: yupResolver(validationSchema) };
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm(formOptions, { mode: "onChange" });
-
   const [sent, setSent] = useState(false);
   const [isSending, setSending] = useState(false);
   const [success, setSuccess] = useState(false);
   const [formError, setFormError] = useState(true);
 
-  const onSubmit = (data, e) => {
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const inputs = [
+    {
+      id: 1,
+      name: "name",
+      type: "text",
+      placeholder: "Imię",
+      errorMessage: "Wpisane imię jest za krótkie ",
+      label: "Imię",
+      pattern: "^[A-Za-z0-9]{2,32}$",
+      required: true,
+    },
+    {
+      id: 2,
+      name: "email",
+      type: "email",
+      placeholder: "Email",
+      errorMessage: "Proszę wpisać poprawny adres email",
+      label: "Email",
+      required: true,
+    },
+  ];
+  const text = [
+    {
+      name: "message",
+
+      placeholder: "Wiadomość",
+      errorMessage:
+        "Username should be 2-16 characters and shouldn't include any special character!",
+      required: true,
+    },
+  ];
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!isSending) {
@@ -53,12 +71,14 @@ const ContactForm = ({ title }) => {
             setSending(false);
             setSent(!sent);
             setSuccess(!success);
-            reset();
+
+            // reset();
             setTimeout(() => {
               setSuccess(false);
             }, 3000);
           },
           (error) => {
+            console.log(error);
             setSending(false);
             setFormError(true);
           }
@@ -66,110 +86,28 @@ const ContactForm = ({ title }) => {
     }
   };
 
-  const handleClick = () => {
-    setSent(!sent);
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  // const firstName = register("firstName", { minLength: 4 });
-  const firstName = register("firstName");
-  // const email = register("email", {
-  //   pattern: {
-  //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-  //     message: "aaaaa",
-  //   },
-  // });
-  const email = register("email");
-
-  // const emailValidation = {
-  //   ...register("email", {
-  //     required: true,
-  //     pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-  //   }),
-  // };
-
-  // const phoneValidation = {
-  //   ...register("phone", {
-  //     required: true,
-  //     pattern: /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/,
-  //   }),
-  // };
-
   return (
-    <form
-      id="form_1"
-      className="form"
-      noValidate
-      onSubmit={handleSubmit(onSubmit)}
-      method="POST">
-      <InputField
-        inputRef={firstName.ref}
-        type="text"
-        placeholder="Imię"
-        error={errors.firstName}
-        errorMessage={
-          (errors.firstName &&
-            errors.firstName.type === "required" &&
-            "Pole wymagane") ||
-          (errors.firstName &&
-            errors.firstName.type === "minLength" &&
-            "Wpisane imię jest za krótkie")
-        }
-      />
-      {/* <InputField
-        type="text"
-        // name="lastName"
-        placeholder="Nazwisko"
-        id="lastName"
-        className="mt-6 rounded-lg"
-        // requiredOnly
-        // {...register("lastName", {
-        //   required: "Required",
-        // })}
-        error={errors.lastName}
-        errorMessage={
-          (errors.lastName &&
-            errors.lastName.type === "required" &&
-            "Pole wymagane") ||
-          (errors.lastName &&
-            errors.lastName.type === "minLength" &&
-            "Wpisane imię jest za krótkie")
-        }
-      /> */}
-      <InputField
-        type="email"
-        name="email"
-        inputRef={email.ref}
-        id="email"
-        // name="email"
-        placeholder="Email"
-        className="mt-6"
-        // register={emailValidation}
-        // {...register("email", {
-        //   required: "Required",
-        // })}
-        error={errors.email}
-        errorMessage={
-          (errors.email &&
-            errors.email.type === "required" &&
-            "Pole wymagane") ||
-          (errors.email &&
-            errors.email.type === "minLength" &&
-            "Wpisane imię jest za krótkie")
-        }
-        // errorMessage="Proszę wpisać poprawny adres email"
-      />
-      <TextField
-        id="message"
-        name="message"
-        placeholder="Wiadomość"
-        className="mt-6"
-        // register={emailValidation}
-        // {...register("message", {
-        //   required: "Required",
-        // })}
-        error={errors.message}
-        errorMessage="Proszę wpisać treść wiadomości"
-      />
+    <form id="form_1" className="form" onSubmit={handleSubmit}>
+      {inputs.map((input) => (
+        <InputField
+          key={input.id}
+          {...input}
+          value={values[input.name]}
+          onChange={onChange}
+        />
+      ))}
+      {text.map((input) => (
+        <TextField
+          key={input.id}
+          {...input}
+          value={values[input.name]}
+          onChange={onChange}
+        />
+      ))}
 
       <CSSTransition
         in={success}
@@ -177,11 +115,9 @@ const ContactForm = ({ title }) => {
         classNames="contact-slide"
         unmountOnExit>
         <div className="rounded-lg mt-8 contact-badge flex justify-between items-center bg-white  border border-green border-1">
-          <div className="p-4 border-r-1 border border-green">
-            {/* <Icon icon="check" /> */}
-          </div>
-          <p className="p-4 text-green font-bold ">
-            Dzięki za zgłoszenie, odezwiemy się jak najszybciej!
+          <p className="success">
+            Dziękujemy za wiadomość. Proszę oczekiwać odpowiedzi w przeciągu 5
+            dni roboczych.
           </p>
         </div>
       </CSSTransition>
