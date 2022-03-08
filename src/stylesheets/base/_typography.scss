@@ -13,7 +13,7 @@ h6 {
   font-family: $font-sans-serif;
   margin: 1rem 0;
   line-height: 1.5;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 h1 {
@@ -24,7 +24,7 @@ h1 {
 h2 {
   font-size: 32px;
   line-height: 45px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h3 {
@@ -64,6 +64,10 @@ pre {
 //   }
 // }
 
+p {
+  font-weight: 400;
+}
+
 ol {
   list-style: disc;
 }
@@ -84,9 +88,8 @@ em {
 
 @media (min-width: $min-width-md) {
   h2 {
-    line-height: 67px;
+    line-height: 56px;
     font-size: 48px;
-    font-weight: 600;
   }
 }
 

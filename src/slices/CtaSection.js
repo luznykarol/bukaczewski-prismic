@@ -9,7 +9,7 @@ export const CtaSection = ({ slice }) => {
   const { items, primary } = slice;
 
   return (
-    <section className="cta__section" id="cta__section">
+    <section className="cta__section" id="ourTeam">
       <div className="container">
         <div className="text__container">
           <h2>Mozemy w tym pomóc!</h2>

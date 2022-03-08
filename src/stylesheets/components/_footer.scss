@@ -1,11 +1,9 @@
 .footer {
   min-height: 89px;
   padding: 16px 0 0;
-  box-shadow: 0 13px 48px 0 rgb(218 218 218 / 44%);
+  // box-shadow: 0 13px 48px 0 rgb(218 218 218 / 44%);
   text-align: center;
-  // border-top: 1px solid #dadada;
-  // border-top: 1px solid $grey-border;
-  // box-shadow: 0 13px 48px 0 rgb(215 216 222 / 44%);
+  border-top: 1px solid #dadada;
   display: flex;
   flex-direction: column;
 
@@ -77,6 +75,7 @@
       position: relative;
       display: flex;
       align-items: center;
+      font-weight: 500;
       text-align: left;
       margin: 0 0 16px 0;
 
@@ -100,6 +99,16 @@
     svg {
       height: 100%;
       width: 100%;
+
+      g {
+        path {
+          fill: $text-grey;
+        }
+      }
+
+      path {
+        fill: $text-grey;
+      }
     }
   }
 
@@ -138,10 +147,13 @@
   .copyright {
     margin-top: 32px;
     text-align: left;
-    font-size: $smaller;
     background: $black;
     color: $white;
     padding: 16px 0;
+
+    p {
+      font-size: $smallest;
+    }
   }
 
   &__social {
@@ -164,6 +176,12 @@
     &__icon {
       width: 16px;
       height: 16px;
+
+      svg {
+        path {
+          fill: $text-grey;
+        }
+      }
     }
   }
 

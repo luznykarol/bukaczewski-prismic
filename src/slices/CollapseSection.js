@@ -12,13 +12,18 @@ const CollapseSection = ({ slice }) => {
 
   const { primary, items } = slice;
 
+  console.log(primary);
+
   return (
-    <section className="collapse__section">
+    <section className="collapse__section" id="collapseSection">
       <div className="container">
-        <div className="collapse__text">
-          <h2>{primary.title.text}</h2>
-          <PrismicRichText field={primary.description.richText} />
-        </div>
+        {primary.title.text !== "" && (
+          <div className="collapse__text">
+            <h2>{primary.title.text}</h2>
+            <PrismicRichText field={primary.description.richText} />
+          </div>
+        )}
+
         <div className="collapse__container">
           {items.map((item, i) => {
             return (

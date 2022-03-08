@@ -38,7 +38,8 @@ export const ContactSection = ({ slice, prismicContactInfo }) => {
               </li>
             </ul>
           </div>
-          <div className="grid__col grid__col--center">
+          {/* <div className="grid__col grid__col--center"> */}
+          <div className="grid__col">
             <div className="card">
               <ContactForm />
             </div>

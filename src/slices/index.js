@@ -8,6 +8,7 @@ import { TextInfo } from "./TextInfo";
 import { ContactSection } from "./ContactSection";
 import CollapseSection from "./CollapseSection";
 import { TeamSection } from "./TeamSection";
+import { AboutSection } from "./AboutSection";
 
 export const components = {
   collapse_section: CollapseSection,
@@ -20,4 +21,5 @@ export const components = {
   contactsection: ContactSection,
   cta_section: CtaSection,
   team_section: TeamSection,
+  about_section: AboutSection,
 };

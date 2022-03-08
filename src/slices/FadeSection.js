@@ -14,7 +14,7 @@ export const FadeSection = ({ slice }) => {
   const ref = useRef();
 
   useEffect(() => {
-    if (items) {
+    if (items.length > 1) {
       ref.current = setInterval(() => {
         if (imageIndex < arrLength) {
           setImageIndex(imageIndex + 1);
@@ -60,7 +60,7 @@ export const FadeSection = ({ slice }) => {
           <div className="fade__link__inner">
             {/* Dowiedz się więcej */}
             <Icon className="icon icon__arrowDown" icon="arrowDown" />
-            <AnchorLink href={`${primary.section_id.text}`} />
+            <AnchorLink title="" href={`/#ourTeam`} />
           </div>
         </div>
       </div>

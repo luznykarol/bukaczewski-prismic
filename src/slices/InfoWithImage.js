@@ -2,6 +2,8 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { PrismicRichText } from "@prismicio/react";
+import Icon from "../components/Icon";
+import AnchorLink from "../components/AnchorLink";
 
 export const InfoWithImage = ({ slice }) => {
   const featuredImage = slice.primary.featured_image;
@@ -28,12 +30,20 @@ export const InfoWithImage = ({ slice }) => {
           className="desktop"
         />
       </div>
-      <div className="container absolute">
+      <div className="container">
         <div className="text-content">
           <PrismicRichText
             className="text-content"
             field={slice.primary.section_title.richText}
           />
+        </div>
+      </div>
+      <div className="info-with-image__link">
+        <div className="info-with-image__link__inner">
+          {/* Dowiedz się więcej */}
+          <Icon className="icon icon__arrowDown" icon="arrowDown" />
+          {/* <AnchorLink title="" href={`${primary.section_id.text}`} /> */}
+          <AnchorLink title="" href="#collapseSection" />
         </div>
       </div>
     </section>

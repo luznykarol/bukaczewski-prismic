@@ -38,7 +38,6 @@
   z-index: 10;
 
   @media only screen and (min-width: $min-width-md) {
-    padding: 24px 0;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -129,7 +128,7 @@
         display: inline-block;
 
         text-decoration: none;
-        color: black;
+        color: $text-grey;
         font-size: 1rem;
         font-weight: 500;
 

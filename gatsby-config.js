@@ -12,7 +12,12 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-preload-fonts",
-    "gatsby-plugin-anchor-links",
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      // options: {
+      //   offset: -120,
+      // },
+    },
     {
       resolve: "gatsby-source-prismic",
       options: {
