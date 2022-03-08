@@ -30,6 +30,7 @@
   &__button {
     background-color: transparent;
     cursor: pointer;
+    color: $text-grey;
     margin: 24px 0;
     position: relative;
     font-weight: 500;
@@ -112,7 +113,6 @@
 
   &__mobile {
     &__item {
-      display: block;
       border: 1px solid $grey-border;
       padding: 16px;
       max-width: 500px;
@@ -131,7 +131,7 @@
     &__image {
       max-width: 250px;
       margin: 0 auto;
-      display: block;
+      display: block !important;
 
       @media (min-width: 414px) {
         max-width: 300px;
