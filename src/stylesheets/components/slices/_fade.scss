@@ -7,11 +7,11 @@
 
   &__section {
     // height: calc(100vh - 88px - 89px);
-    height: calc(100vh - 69px);
-    min-height: calc(100vh - 69px);
+    height: calc(100vh - 73px);
+    min-height: calc(100vh - 73px);
 
     @media (min-width: $min-width-md) {
-      height: calc(100vh - 69px);
+      height: calc(100vh - 73px);
       // height: calc(100vh - 88px);
     }
   }
@@ -119,19 +119,19 @@
     height: 201px;
     display: flex;
     align-items: center;
-    font-size: 38px;
+    font-size: 30px;
     color: #fff;
     line-height: 1.2;
 
-    @media only screen and (min-width: 375px) {
-      font-size: 40px;
-    }
+    // @media only screen and (min-width: 414px) {
+    //   font-size: 44px;
+    // }\
 
-    @media only screen and (min-width: 414px) {
+    @media only screen and (min-width: $min-width-sm) {
       font-size: 44px;
     }
 
-    @media only screen and (min-width: $min-width-md) {
+    @media only screen and (min-width: $min-width-sm) {
       font-size: 52px;
     }
 

@@ -1,14 +1,14 @@
 .info-with-image {
   // height: calc(100vh - 88px - 89px);
   position: relative;
-  height: calc(100vh - 69px);
-  min-height: calc(100vh - 69px);
+  height: calc(100vh - 73px);
+  min-height: calc(100vh - 73px);
   display: flex;
   align-items: center;
   justify-content: flex-start;
 
   @media (min-width: $min-width-md) {
-    height: calc(100vh - 69px);
+    height: calc(100vh - 73px);
     // height: calc(100vh - 88px);
   }
 
@@ -126,7 +126,7 @@ main {
   margin-top: 72px;
   // height: calc(100vh - 72px);
   // height: 100%;
-  min-height: calc(100vh - 69px);
+  min-height: calc(100vh - 73px);
   // @media (min-width: $min-width-md) {
   //   margin-top: 88px;
   //   min-height: calc(100vh - 88px);

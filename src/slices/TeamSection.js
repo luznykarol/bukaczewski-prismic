@@ -25,8 +25,8 @@ export const TeamSection = ({ slice }) => {
             alt={team.name.text}
           />
           <div className="team__mobile__text">
-            <span className="team__mobile__position">{team.position.text}</span>
             <h2 className="team__mobile__name">{team.name.text}</h2>
+            <span className="team__mobile__position">{team.position.text}</span>
           </div>
 
           <div
@@ -65,6 +65,7 @@ export const TeamSection = ({ slice }) => {
               <h2>{team.name.text}</h2>
               <PrismicRichText field={team.description.richText} />
             </div>
+
             <button className="team__button" onClick={handleClick}>
               {textOverflow ? "Mniej" : "Wczytaj więcej"}
             </button>

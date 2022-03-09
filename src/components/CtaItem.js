@@ -6,6 +6,8 @@ import Icon from "./Icon";
 
 const CtaItem = ({ item }) => {
   const { button_text, description, image, link, title1 } = item;
+
+  console.log("ITEM", item);
   return (
     <div className="cta__item">
       <GatsbyImage

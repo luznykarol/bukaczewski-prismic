@@ -7,8 +7,8 @@ const prismicConfig = require("./prismic-configuration");
 
 module.exports = {
   siteMetadata: {
-    title: "Multi-language site",
-    description: "Sample multi-language website with Prismic CMS & Gatsby.js",
+    title: "Bukaczewski Legal | Kancelaria Radcy Prawnego Warszawa",
+    description: "Usługi prawne",
   },
   plugins: [
     "gatsby-plugin-preload-fonts",

@@ -17,7 +17,7 @@
     margin-right: 4px;
     vertical-align: text-top;
     display: flex;
-    // @media only screen and (min-width: $min-width-md) {
+
     width: 192px;
     height: 37px;
 
@@ -25,14 +25,12 @@
       width: 100%;
       height: 100%;
     }
-    // }
   }
 }
 
 .header {
   margin: auto;
-  padding: 16px 0;
-  // border-bottom: 1px solid $grey-border;
+  padding: 18px 0;
   flex-direction: row;
   justify-content: space-between;
   position: fixed;
@@ -61,19 +59,16 @@
   &__list--mobile {
     position: absolute;
     transform: translateY(-150%);
-    min-height: 100vh;
+    min-height: calc(100vh - 73px);
     left: 0;
     right: 0;
     transition: 0.3s all ease-in;
     background-color: $black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     &--open {
       opacity: 100;
@@ -82,14 +77,11 @@
     }
 
     .nav__link {
-      font-size: 32px;
+      font-size: 24px;
       font-weight: 500;
-      color: $text-grey;
+      color: $white;
       text-align: center;
-
-      a {
-        color: $white;
-      }
+      margin: 0 auto 16px auto;
 
       &:not(:last-of-type) {
         margin-bottom: 16px;
@@ -122,26 +114,6 @@
       list-style: none;
       margin: 0;
       padding: 0;
-
-      li {
-        &:not(:last-of-type) {
-          margin-right: 32px;
-        }
-      }
-
-      a {
-        color: inherit;
-        display: inline-block;
-
-        text-decoration: none;
-        color: $text-grey;
-        font-size: 1rem;
-        font-weight: 500;
-
-        .slash {
-          padding-left: 6px;
-        }
-      }
 
       img {
         width: 18px;
@@ -224,7 +196,7 @@
   height: 16px;
   background-color: #fff;
   position: absolute;
-  right: 16px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
 
@@ -277,6 +249,10 @@ ul {
 .nav__link {
   font-weight: 500;
   position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: $grey-text-new;
+  margin-right: 32px;
 
   &:after {
     position: absolute;
@@ -287,6 +263,19 @@ ul {
     height: 1px;
     background-color: $black;
     transition: 0.4s all ease-in-out;
+  }
+
+  &--active {
+    &:after {
+      position: absolute;
+      content: "";
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $black;
+      transition: 0.4s all ease-in-out;
+    }
   }
 
   &:hover {

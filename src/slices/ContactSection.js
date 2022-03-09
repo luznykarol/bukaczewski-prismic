@@ -1,8 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import { PrismicRichText } from "@prismicio/react";
-import { asText } from "@prismicio/helpers";
-import ContactForm from "../components/Form";
 import { useContact } from "../hooks/use-contact";
 import Icon from "../components/Icon";
 
@@ -37,12 +35,6 @@ export const ContactSection = ({ slice, prismicContactInfo }) => {
                 <PrismicRichText field={address.richText} />
               </li>
             </ul>
-          </div>
-          {/* <div className="grid__col grid__col--center"> */}
-          <div className="grid__col">
-            <div className="card">
-              <ContactForm />
-            </div>
           </div>
         </div>
       </div>

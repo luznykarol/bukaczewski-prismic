@@ -3,7 +3,6 @@
   "description": "Multi-language website example with Gatsby.js using Prismic headless CMS",
   "author": "Prismic",
   "dependencies": {
-    "@emailjs/browser": "^3.4.0",
     "@hookform/resolvers": "^2.8.8",
     "@prismicio/helpers": "^2.0.0",
     "@prismicio/react": "^2.0.3",
@@ -22,10 +21,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-hook-form": "^7.27.1",
     "react-slide-toggle": "^0.3.5",
-    "react-transition-group": "^4.4.2",
-    "yup": "^0.32.11"
+    "react-transition-group": "^4.4.2"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",

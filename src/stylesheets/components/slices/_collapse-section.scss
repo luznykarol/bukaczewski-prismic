@@ -1,8 +1,6 @@
 .collapse {
   &__section {
     padding: 48px 0;
-    // background-color: $grey-bg;
-
     @media (min-width: $min-width-md) {
       padding: 120px 0;
     }
@@ -25,9 +23,6 @@
   }
 
   &__container {
-    // display: flex;
-    // flex-wrap: wrap;
-
     @media (min-width: $min-width-md) {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -41,10 +36,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    // max-width: 45%;
-
     margin-bottom: 24px;
-    // width: 100%;
 
     h4 {
       font-weight: 500;
@@ -71,16 +63,11 @@
 
     &__inner {
       position: relative;
-      // box-shadow: 0 13px 48px 0 rgb(218 218 218 / 44%);
-      // background-color: $white;
-      border: 1px solid $grey-border;
       width: 100%;
-      // border-radius: 10px;
-
       padding: 16px;
 
       @media (min-width: $min-width-md) {
-        padding: 24px;
+        padding: 16px 16px 16px 0;
       }
     }
 
@@ -103,7 +90,7 @@
       width: 100%;
 
       path {
-        fill: $text-grey;
+        fill: $grey-text-new;
       }
     }
 
@@ -132,7 +119,7 @@
           height: 5px;
           top: 50%;
           transform: translateY(-50%);
-          background: $text-grey;
+          background: $grey-text-new;
           border-radius: 100%;
         }
         &:not(:last-of-type) {

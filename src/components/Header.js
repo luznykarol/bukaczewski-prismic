@@ -10,25 +10,16 @@ export const Header = ({ topMenu, activeDocMeta, indexRoute }) => {
   const renderedMenuLinks =
     topMenu &&
     topMenu.menu_links.map((menuLink, index) => (
-      <li className="nav__link" key={`top-nav-${index}`}>
-        <PrismicLink href={menuLink.link.url}>
-          <PrismicText field={menuLink.label.richText} />
-        </PrismicLink>
-      </li>
+      <Link
+        className="nav__link"
+        activeClassName="nav__link--active"
+        to={menuLink.link.url}>
+        <PrismicText field={menuLink.label.richText} />
+      </Link>
     ));
 
   const [scroll, setScroll] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  // const node = useRef();
-
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   if (node.current.contains(e.target)) {
-  //     return;
-  //   }
-  //   setMenuOpen(!menuOpen);
-  // };
 
   useEffect(() => {
     if (menuOpen) {

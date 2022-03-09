@@ -22,8 +22,8 @@ h1 {
 }
 
 h2 {
-  font-size: 32px;
-  line-height: 45px;
+  font-size: 30px;
+  line-height: 1.3;
   font-weight: 500;
 }
 
@@ -89,7 +89,7 @@ em {
 @media (min-width: $min-width-md) {
   h2 {
     line-height: 56px;
-    font-size: 48px;
+    font-size: 40px;
   }
 }
 
