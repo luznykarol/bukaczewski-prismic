@@ -125,12 +125,6 @@ input:-webkit-autofill:active {
   transition: 0.4s outline ease;
 }
 
-.teamouter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .success {
   background-color: $green;
   color: $white;

@@ -338,30 +338,6 @@
               }
             },
             "repeat": {}
-          },
-          "about_section": {
-            "type": "Slice",
-            "fieldset": "About Section",
-            "description": "about section",
-            "icon": "accessibility",
-            "display": "list",
-            "non-repeat": {
-              "title": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading1,heading2,heading3,heading4,heading5,heading6",
-                  "label": "title"
-                }
-              },
-              "description": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-                  "label": "Description"
-                }
-              }
-            },
-            "repeat": {}
           }
         }
       }

@@ -25,6 +25,15 @@ export const useTeam = () => {
                 specializations {
                   richText
                 }
+                experience {
+                  richText
+                }
+                education {
+                  richText
+                }
+                languages {
+                  richText
+                }
               }
             }
           }

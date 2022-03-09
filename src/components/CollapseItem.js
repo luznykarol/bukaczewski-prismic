@@ -7,6 +7,7 @@ import Icon from "./Icon";
 
 export default function Question({ item, active, toggleQuestion, id }) {
   const { list, title } = item;
+  console.log("AAAAA", item);
   // const { question, answer, icon, position } = item;
 
   const faqClass =
@@ -30,7 +31,7 @@ export default function Question({ item, active, toggleQuestion, id }) {
                 <h4
                   className="text-lg leading-6 font-semibold text-cam-white transition-colors duration-300 ease-in-out
               ">
-                  {title.text}
+                  {title?.text && title.text}
                 </h4>
                 <Icon
                   className={
@@ -44,7 +45,7 @@ export default function Question({ item, active, toggleQuestion, id }) {
 
               <div ref={setCollapsibleElement}>
                 <div className="collapse__list">
-                  <PrismicRichText field={list.richText} />
+                  <PrismicRichText field={list?.richText} />
                   {/* <RichText
                     render={answer.raw}
                     htmlSerializer={htmlSerializer}

@@ -32,8 +32,6 @@ export const Layout = ({ children, contactInfo, topMenu, activeDocMeta }) => {
     return child;
   });
 
-  console.log("QUERY", queryData);
-
   return (
     <>
       <Preloader></Preloader>

@@ -12,13 +12,17 @@ export const CtaSection = ({ slice }) => {
     <section className="cta__section" id="ourTeam">
       <div className="container">
         <div className="text__container">
-          <h2>Mozemy w tym pomóc!</h2>
-          <PrismicRichText field={primary.description.richText} />
+          {primary.title1.text !== "" && <h2>{primary.title.text}</h2>}
+          {/* <PrismicRichText field={primary.description.richText} /> */}
         </div>
         <div className="cta__container">
-          {items.map((item, index) => {
-            return <CtaItem key={`cta-item-${index}`} item={item} />;
-          })}
+          {items
+            .sort((a, b) => {
+              return a.order - b.order;
+            })
+            .map((item, index) => {
+              return <CtaItem key={`cta-item-${index}`} item={item} />;
+            })}
         </div>
       </div>
     </section>
@@ -37,6 +41,7 @@ export const query = graphql`
       }
     }
     items {
+      order
       button_text {
         text
       }

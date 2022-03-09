@@ -28,15 +28,3 @@ export const onPreRouteUpdate = () => {
     document.getElementById("loader-wrapper").classList.add("loader-aaa");
   }, 1700);
 };
-
-// var body = document.querySelector("body");
-// document.onreadystatechange = function () {
-//   if (document.readyState === "complete") {
-//     body.classList.add("preloader_ready");
-//     setTimeout(function () {
-//       body.classList.remove("preloader_active");
-//       body.classList.remove("preloader_ready");
-//     }, 500);
-//     console.log("DUPA");
-//   }
-// };

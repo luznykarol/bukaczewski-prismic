@@ -4,8 +4,8 @@
       "type": "Image",
       "config": {
         "constraint": {
-          "width": 300,
-          "height": 200
+          "width": null,
+          "height": null
         },
         "thumbnails": [],
         "label": "Image"
@@ -37,6 +37,27 @@
       "config": {
         "multi": "list-item",
         "label": "specializations"
+      }
+    },
+    "education": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "list-item",
+        "label": "Education"
+      }
+    },
+    "experience": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "list-item",
+        "label": "experience"
+      }
+    },
+    "languages": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "list-item",
+        "label": "Languages"
       }
     }
   }

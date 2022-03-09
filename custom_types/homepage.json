@@ -291,6 +291,12 @@
                   "label": "image"
                 }
               },
+              "order": {
+                "type": "Number",
+                "config": {
+                  "label": "order"
+                }
+              },
               "title1": {
                 "type": "StructuredText",
                 "config": {
@@ -320,6 +326,40 @@
                 }
               }
             }
+          },
+          "columns_section": {
+            "type": "Slice",
+            "fieldset": "columns section",
+            "description": "3 columns for main page",
+            "icon": "account_balance",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "image1": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 500
+                  },
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              },
+              "title2": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                  "label": "Title"
+                }
+              },
+              "description1": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "description"
+                }
+              }
+            }
           }
         }
       }
@@ -329,7 +369,7 @@
     "title1": {
       "type": "StructuredText",
       "config": {
-        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
         "label": "title"
       }
     },

@@ -12,8 +12,6 @@ const CollapseSection = ({ slice }) => {
 
   const { primary, items } = slice;
 
-  console.log(primary);
-
   return (
     <section className="collapse__section" id="collapseSection">
       <div className="container">

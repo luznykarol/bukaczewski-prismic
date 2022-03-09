@@ -6,7 +6,7 @@
     //   min-height: calc(100vh - 88px);
     // }
 
-    padding: 48px 0;
+    // padding: 48px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@
   }
 
   &__list {
-    margin: 24px auto 0 auto;
+    // margin: 24px auto 0 auto;
 
     @media (min-width: $min-width-md) {
       margin: 24px 0 0;
@@ -63,7 +63,7 @@
   .text__container {
     margin: 0 0 32px 0;
     h2 {
-      margin: 0 0 24px 0;
+      margin: 0 0 8px 0;
     }
   }
 

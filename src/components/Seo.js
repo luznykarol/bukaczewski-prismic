@@ -17,8 +17,6 @@ const Seo = ({ data, lang }) => {
     `
   );
 
-  console.log(site);
-
   // const metadata = site.siteMetadata;
   // const metaTitle = data.title || metadata.title;
   // const fullTitle = `${metaTitle} ${metadata.separator} ${metadata.title}`;

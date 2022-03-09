@@ -7,7 +7,6 @@ import Icon from "./Icon";
 const CtaItem = ({ item }) => {
   const { button_text, description, image, link, title1 } = item;
 
-  console.log("ITEM", item);
   return (
     <div className="cta__item">
       <GatsbyImage
@@ -18,12 +17,14 @@ const CtaItem = ({ item }) => {
         // alt={item.image?.alt}
       />
       <div className="cta__inner">
-        <h3>{title1.text}</h3>
-        <PrismicRichText field={description.richText} />
-        <Link to={link.url} className="cta__button">
-          {button_text.text}
-          <Icon className="cta__icon" icon="arrowRight" />
-        </Link>
+        <div className="cta__inner__text">
+          <h3>{title1.text}</h3>
+          <PrismicRichText field={description.richText} />
+          <Link to={link.url} className="cta__button">
+            {button_text.text}
+            <Icon className="cta__icon" icon="arrowRight" />
+          </Link>
+        </div>
       </div>
     </div>
   );

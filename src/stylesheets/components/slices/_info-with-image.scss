@@ -95,21 +95,21 @@
     // transform: translate(-16px, -50%);
 
     h1 {
-      font-size: 38px;
+      font-size: 30px;
       color: $white;
       line-height: 1.2;
 
-      @media only screen and (min-width: 375px) {
-        font-size: 40px;
-      }
+      // @media only screen and (min-width: 375px) {
+      //   font-size: 40px;
+      // }
 
-      @media only screen and (min-width: 414px) {
-        font-size: 44px;
-      }
+      // @media only screen and (min-width: 414px) {
+      //   font-size: 44px;
+      // }
 
-      @media only screen and (min-width: $min-width-md) {
-        font-size: 52px;
-      }
+      // @media only screen and (min-width: $min-width-md) {
+      //   font-size: 52px;
+      // }
 
       font-weight: 500;
       max-width: 580px;

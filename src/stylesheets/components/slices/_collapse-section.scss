@@ -26,7 +26,8 @@
     @media (min-width: $min-width-md) {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 24px;
+      grid-column-gap: 48px;
+      grid-row-gap: 24px;
     }
   }
 
@@ -36,7 +37,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-bottom: 24px;
 
     h4 {
       font-weight: 500;
@@ -46,25 +46,23 @@
       align-items: center;
       max-width: 270px;
       font-size: 18px;
+      margin: 0 16px 0 0;
 
       @media (min-width: 414px) {
         max-width: 370px;
-        line-height: 32px;
-        font-size: $largest;
+        line-height: 24px;
+        font-size: $larger;
       }
 
       @media (min-width: $min-width-md) {
-        min-height: 64px;
-      }
-      @media (min-width: $min-width-l) {
-        font-size: 20px;
+        min-height: 48px;
       }
     }
 
     &__inner {
       position: relative;
       width: 100%;
-      padding: 16px;
+      padding: 16px 16px 16px 0;
 
       @media (min-width: $min-width-md) {
         padding: 16px 16px 16px 0;
@@ -80,6 +78,8 @@
     width: 16px;
     height: 16px;
     transition: 0.4s all ease-in-out;
+    display: flex;
+    flex-shrink: 0;
 
     @media (min-width: 414px) {
       height: 24px;
