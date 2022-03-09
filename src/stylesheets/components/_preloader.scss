@@ -13,6 +13,8 @@ body {
   &.preloader_active {
     height: 100vh;
     overflow-y: hidden;
+    width: 100%;
+    background: red;
 
     #preloader {
       height: auto;
@@ -31,6 +33,10 @@ body {
   &.preloader_ready {
     height: auto;
     overflow-y: auto;
+    background: red;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
 
     #preloader {
       animation: preloaderLeaving 0.5s forwards;
@@ -47,36 +53,36 @@ body {
   }
 }
 
-// Optional:
-body {
-  #preloader {
-    img {
-      z-index: 120;
-    }
+// // Optional:
+// body {
+//   #preloader {
+//     img {
+//       z-index: 120;
+//     }
 
-    .preloader_animation {
-      position: absolute;
-      width: calc(3.23625vw + 77.86408px);
-      height: calc(3.23625vw + 77.86408px);
-      border: 5px solid #ffffff;
-      border-radius: 50%;
-      opacity: 0;
-      z-index: 110;
-      animation: preloaderAnimation 1.5s ease-out infinite 0s;
+//     .preloader_animation {
+//       position: absolute;
+//       width: calc(3.23625vw + 77.86408px);
+//       height: calc(3.23625vw + 77.86408px);
+//       border: 5px solid #ffffff;
+//       border-radius: 50%;
+//       opacity: 0;
+//       z-index: 110;
+//       animation: preloaderAnimation 1.5s ease-out infinite 0s;
 
-      @keyframes preloaderAnimation {
-        0% {
-          transform: scale(0.1);
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          transform: scale(1.2);
-          opacity: 0;
-        }
-      }
-    }
-  }
-}
+//       @keyframes preloaderAnimation {
+//         0% {
+//           transform: scale(0.1);
+//           opacity: 0;
+//         }
+//         50% {
+//           opacity: 1;
+//         }
+//         100% {
+//           transform: scale(1.2);
+//           opacity: 0;
+//         }
+//       }
+//     }
+//   }
+// }

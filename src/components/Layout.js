@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import Seo from "./Seo";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import Preloader from "./Preloader";
 
 export const Layout = ({ children, contactInfo, topMenu, activeDocMeta }) => {
   const queryData = useStaticQuery(graphql`
@@ -35,6 +36,7 @@ export const Layout = ({ children, contactInfo, topMenu, activeDocMeta }) => {
 
   return (
     <>
+      <Preloader></Preloader>
       <Helmet>
         <meta charSet="utf-8" />
         <title>{queryData.site.siteMetadata.title}</title>
@@ -45,6 +47,7 @@ export const Layout = ({ children, contactInfo, topMenu, activeDocMeta }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Helmet>
       <Seo />
+
       <Header
         topMenu={topMenu}
         indexRoute={indexRoute}
