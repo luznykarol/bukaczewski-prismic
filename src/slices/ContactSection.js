@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { PrismicRichText } from "@prismicio/react";
 import { useContact } from "../hooks/use-contact";
 import Icon from "../components/Icon";
+import Map from "../components/Map";
 
 export const ContactSection = ({ slice, prismicContactInfo }) => {
   const contact = useContact();
@@ -36,6 +37,15 @@ export const ContactSection = ({ slice, prismicContactInfo }) => {
               </li>
             </ul>
           </div>
+
+          <Map
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_MAP}&libraries=geometry,drawing,places`}
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div className="grid__col" />}
+            mapElement={
+              <div className="rounded-l" style={{ height: `100%` }} />
+            }
+          />
         </div>
       </div>
     </section>

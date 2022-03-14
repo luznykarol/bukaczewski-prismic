@@ -3,12 +3,13 @@ import { Link } from "gatsby";
 import { PrismicRichText } from "@prismicio/react";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import Icon from "./Icon";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const CtaItem = ({ item }) => {
   const { button_text, description, image, link, title1 } = item;
 
   return (
-    <div className="cta__item">
+    <ScrollAnimation animateOnce className="cta__item" animateIn="fadeInUp">
       <GatsbyImage
         alt="alt"
         // style={{ position: "absolute" }}
@@ -26,7 +27,7 @@ const CtaItem = ({ item }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </ScrollAnimation>
   );
 };
 
